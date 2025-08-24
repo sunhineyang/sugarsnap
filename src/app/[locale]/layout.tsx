@@ -30,6 +30,26 @@ export async function generateMetadata({
     alternates: {
       canonical: "https://aidiabetes.net",
     },
+    // 配置 favicon 和各种尺寸的图标
+    icons: {
+      icon: [
+        {
+          url: "/favicon.ico",
+          sizes: "any",
+        },
+        {
+          url: "/favicon.png",
+          type: "image/png",
+          sizes: "32x32",
+        },
+      ],
+      shortcut: "/favicon.ico",
+      apple: {
+        url: "/favicon.png",
+        sizes: "180x180",
+        type: "image/png",
+      },
+    },
   };
 }
 

@@ -78,6 +78,15 @@ export interface CoreFeature extends Section {
     loading_text?: string;
     success_text?: string;
     error_text?: string;
+    error_title?: string;
+    error_description?: string;
+    failed_image_alt?: string;
+    file_type_error?: string;
+    uploading_text?: string;
+    analyzing_text?: string;
+    uploading_description?: string;
+    analyzing_description?: string;
+    completed_text?: string;
   };
   
   // 结果展示区域
@@ -85,6 +94,21 @@ export interface CoreFeature extends Section {
     title?: string;
     empty_text?: string;
     save_button_text?: string;
+    status_normal?: string;
+    status_high?: string;
+    status_low?: string;
+    blood_sugar_value?: string;
+    confidence?: string;
+    food_recognition_title?: string;
+    food_count_text?: string;
+    blood_sugar_title?: string;
+    food_name?: string;
+    calories?: string;
+    carbs?: string;
+    protein?: string;
+    fat?: string;
+    recommendation?: string;
+    explanation?: string;
   };
   
   // 历史记录区域
@@ -99,5 +123,13 @@ export interface CoreFeature extends Section {
   tips?: {
     title?: string;
     items?: string[];
+  };
+  
+  // 操作按钮
+  actions?: {
+    retry_analysis?: string;
+    start_over?: string;
+    select_other_image?: string;
+    save_record?: string;
   };
 }

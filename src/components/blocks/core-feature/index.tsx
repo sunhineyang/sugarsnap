@@ -6,12 +6,16 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CoreFeature, AnalysisResult, AnalysisStatus, RecognitionType } from "@/types/blocks/core-feature";
+import { useLocale } from "next-intl";
 
 interface CoreFeatureProps {
   data: CoreFeature;
 }
 
 export default function CoreFeatureBlock({ data }: CoreFeatureProps) {
+  // 获取当前语言
+  const locale = useLocale();
+  
   // 状态管理
   const [analysisStatus, setAnalysisStatus] = useState<AnalysisStatus>("idle");
   const [currentResult, setCurrentResult] = useState<AnalysisResult | null>(null);
@@ -49,6 +53,10 @@ export default function CoreFeatureBlock({ data }: CoreFeatureProps) {
     // 声明 result 变量，确保在整个函数中都可访问
     let result: any = null;
     
+    // 添加调试信息
+    console.log('🔍 [DEBUG] 当前locale值:', locale);
+    console.log('🔍 [DEBUG] 传递给API的lang参数:', locale);
+    
     try {
       // 文件大小检查（限制为 10MB）
       if (file.size > 10 * 1024 * 1024) {
@@ -58,6 +66,7 @@ export default function CoreFeatureBlock({ data }: CoreFeatureProps) {
       // 创建 FormData 对象
       const formData = new FormData();
       formData.append('image', file);
+      formData.append('lang', locale);
       
       setAnalysisStatus("analyzing");
       
@@ -197,7 +206,7 @@ export default function CoreFeatureBlock({ data }: CoreFeatureProps) {
   };
 
   return (
-    <section className="py-16 lg:py-24">
+    <section id="coreFeature" className="py-16 lg:py-24">
       <div className="container">
         {/* 标题区域 */}
         <div className="text-center mb-12">
@@ -216,7 +225,20 @@ export default function CoreFeatureBlock({ data }: CoreFeatureProps) {
               {analysisStatus === "idle" && (
                 <div className="text-center">
                   <div className="mb-8">
-                    <div className="w-32 h-32 mx-auto bg-muted rounded-full flex items-center justify-center mb-4">
+                    <div 
+                      className="w-32 h-32 mx-auto bg-muted rounded-full flex items-center justify-center mb-4 cursor-pointer hover:bg-muted/80 transition-colors"
+                      onClick={() => {
+                        // 显示选择菜单或直接触发相机
+                        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+                        if (isMobile) {
+                          // 移动端直接触发相机
+                          cameraInputRef.current?.click();
+                        } else {
+                          // 桌面端显示选择菜单，这里简单起见直接触发文件选择
+                          fileInputRef.current?.click();
+                        }
+                      }}
+                    >
                       <Camera className="w-16 h-16 text-muted-foreground" />
                     </div>
                     <h3 className="text-xl font-semibold mb-2">
@@ -304,7 +326,7 @@ export default function CoreFeatureBlock({ data }: CoreFeatureProps) {
                           <div className="flex items-center gap-2 mb-6">
                             <h4 className="font-semibold text-lg">{data.results?.food_recognition_title || "食物识别结果"}</h4>
                             <Badge variant="secondary">
-                              识别到 {currentResult.food.allFoods.length} 种食物
+                              {data.results?.food_count_text?.replace('{count}', currentResult.food.allFoods.length.toString()) || `识别到 ${currentResult.food.allFoods.length} 种食物`}
                             </Badge>
                           </div>
                           
@@ -394,13 +416,13 @@ export default function CoreFeatureBlock({ data }: CoreFeatureProps) {
                   </div>
                   <h3 className="text-xl font-semibold mb-2">{data.analysis?.error_title || "分析失败"}</h3>
                   <p className="text-muted-foreground mb-6">
-                    {errorMessage || data.analysis?.error_text || "请检查网络连接或重试"}
+                    {errorMessage || data.analysis?.error_description || "请检查网络连接或重试"}
                   </p>
                   {selectedImage && (
                     <div className="mb-6">
                       <img 
                         src={selectedImage} 
-                        alt="分析失败的图片" 
+                        alt={data.analysis?.failed_image_alt || "分析失败的图片"} 
                         className="w-32 h-32 object-cover rounded-lg mx-auto border"
                       />
                     </div>
@@ -410,7 +432,7 @@ export default function CoreFeatureBlock({ data }: CoreFeatureProps) {
                       {data.actions?.start_over || "重新开始"}
                     </Button>
                     <Button variant="outline" onClick={() => fileInputRef.current?.click()}>
-                      选择其他图片
+                      {data.actions?.select_other_image || "选择其他图片"}
                     </Button>
                   </div>
                 </div>
@@ -431,7 +453,7 @@ export default function CoreFeatureBlock({ data }: CoreFeatureProps) {
                 <div className="grid gap-4">
                   {history.slice(0, 3).map((item, index) => (
                     <div key={item.id || index} className="flex items-center p-4 bg-muted rounded-lg">
-                      {item.image && (
+                      {item.image && item.image.src && (
                         <img 
                           src={item.image.src} 
                           alt={item.image.alt || ''} 

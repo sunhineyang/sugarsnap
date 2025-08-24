@@ -2,8 +2,8 @@
   "pricing": {
     "name": "pricing",
     "label": "定价",
-    "title": "定价",
-    "description": "获取 SugarSnap 的所有功能，轻松管理您的糖尿病健康。",
+    "title": "AI 糖尿病应用定价",
+    "description": "选择适合您的 AI 糖尿病管理计划",
     "groups": [
       {
         "name": "one-time",

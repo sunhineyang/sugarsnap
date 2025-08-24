@@ -28,10 +28,7 @@ export default async function RootLayout({
           <meta name="google-adsense-account" content={googleAdsenseCode} />
         )}
 
-        {/* Favicon 配置 - 让谷歌能正确识别网站图标 */}
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="shortcut icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/favicon.ico" />
+        {/* Favicon 现在通过 metadata API 在 [locale]/layout.tsx 中配置 */}
         
         {/* Canonical URL 配置 - 告诉搜索引擎网站的标准地址 */}
         <link rel="canonical" href={canonicalUrl} />

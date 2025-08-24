@@ -9,5 +9,5 @@ const klingErrorSchema = z.object({
 export const klingFailedResponseHandler = createJsonErrorResponseHandler({
   errorSchema: klingErrorSchema,
   errorToMessage: (error) =>
-    error.message ?? error.code ?? "Unknown Kling error",
+    error.message ?? String(error.code) ?? "Unknown Kling error",
 });

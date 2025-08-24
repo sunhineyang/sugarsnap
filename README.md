@@ -1,15 +1,26 @@
-# ShipAny Template One
+# AI Diabetes Management App
 
-Ship Any AI SaaS Startups in hours.
+AI Diabetes Management App is a comprehensive Next.js application designed to help users manage their diabetes through AI-powered insights and tracking. It provides a robust foundation with modern technologies and best practices for health management applications.
 
 ![preview](preview.png)
 
-## Quick Start
+## ✨ Features
 
-1. Clone the repository
+### 🎯 Core Features
+- **AI-Powered Diabetes Management**: Intelligent insights for blood sugar tracking
+- **Modern Tech Stack**: Built with Next.js 14, TypeScript, and Tailwind CSS
+- **Authentication System**: Secure user management with Supabase Auth
+- **Health Data Tracking**: Comprehensive diabetes monitoring and analytics
+- **User Dashboard**: Personal health dashboard for diabetes management
+- **Multi-language Support**: Built-in internationalization (i18n)
+- **SEO Optimized**: Server-side rendering and meta tag management
+- **Responsive Design**: Mobile-first approach with Tailwind CSS
+
+## 🚀 Quick Start
 
 ```bash
-git clone https://github.com/shipanyai/shipany-template-one.git
+git clone git@github.com:your-username/ai-diabetes-app.git my-ai-diabetes-project
+cd my-ai-diabetes-project
 ```
 
 2. Install dependencies
@@ -44,14 +55,14 @@ cp .env.example .env.development
 
 - Deploy to Vercel
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fshipanyai%2Fshipany-template-one&project-name=my-shipany-project&repository-name=my-shipany-project&redirect-url=https%3A%2F%2Fshipany.ai&demo-title=ShipAny&demo-description=Ship%20Any%20AI%20Startup%20in%20hours%2C%20not%20days&demo-url=https%3A%2F%2Fshipany.ai&demo-image=https%3A%2F%2Fpbs.twimg.com%2Fmedia%2FGgGSW3La8AAGJgU%3Fformat%3Djpg%26name%3Dlarge)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fyour-username%2Fai-diabetes-app&project-name=my-ai-diabetes-project&repository-name=my-ai-diabetes-project&redirect-url=https%3A%2F%2Fai-diabetes.com&demo-title=AI%20Diabetes%20App&demo-description=AI-powered%20diabetes%20management%20application&demo-url=https%3A%2F%2Fai-diabetes.com)
 
 - Deploy to Cloudflare
 
 for new project, clone with branch "cloudflare"
 
 ```shell
-git clone -b cloudflare https://github.com/shipanyai/shipany-template-one.git
+git clone -b cloudflare https://github.com/your-username/ai-diabetes-app.git
 ```
 
 for exist project, checkout to branch "cloudflare"
@@ -79,9 +90,9 @@ npm run cf:deploy
 
 ## Community
 
-- [ShipAny](https://shipany.ai)
-- [Documentation](https://docs.shipany.ai)
+- [AI Diabetes App](https://ai-diabetes.com)
+- [Documentation](https://docs.ai-diabetes.com)
 
 ## License
 
-- [ShipAny AI SaaS Boilerplate License Agreement](LICENSE)
+- [MIT License](LICENSE)

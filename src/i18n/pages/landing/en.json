@@ -1,5 +1,5 @@
 {
-  "template": "shipany-template-one",
+  "template": "ai-diabetes-app",
   "theme": "light",
   "header": {
     "brand": {
@@ -22,7 +22,7 @@
     "buttons": [
       {
         "title": "Get Started",
-        "url": "https://shipany.ai",
+        "url": "https://ai-diabetes.com",
         "target": "_blank",
         "variant": "default",
         "icon": "RiArrowRightUpLine"
@@ -46,7 +46,7 @@
       {
         "title": "Start for Free Now",
         "icon": "RiFlashlightFill",
-        "url": "/#pricing",
+        "url": "/#coreFeature",
         "target": "_self",
         "variant": "default"
       },
@@ -154,9 +154,15 @@
     "analysis": {
       "title": "AI Analysis",
       "uploading_text": "Uploading...",
+      "uploading_description": "Uploading your image",
       "analyzing_text": "AI analyzing...",
+      "analyzing_description": "AI is intelligently analyzing, please wait",
       "completed_text": "Analysis completed",
       "error_text": "Analysis failed",
+      "error_title": "Analysis Failed",
+      "error_description": "Unsupported image format, please select JPG, PNG or other common formats",
+      "select_other_image": "Select Another Image",
+      "failed_image_alt": "Failed analysis image",
       "loading_text": "Analyzing your image...",
       "success_text": "Analysis completed successfully",
       "file_type_error": "Please select an image file"
@@ -181,7 +187,8 @@
       "unit_mg_dl": "mg/dL",
       "unit_g": "g",
       "unit_kcal": "kcal",
-      "save_button_text": "Save Record"
+      "save_button_text": "Save Record",
+      "food_count_text": "Detected {count} food item(s)"
     },
     "actions": {
       "save_record": "Save Record",
@@ -410,6 +417,10 @@
       {
         "title": "How does the AI Diabetes system help me track blood sugar?",
         "description": "It revolutionizes how you track blood sugar in two ways: 1. Automated Logging: By taking a photo, it automatically captures the reading from your meter, eliminating the hassle and errors of manual input. 2. Contextual Analysis: It doesn't just record a number; it links your glucose reading to your food log from the same time, visualizing the connection in your diabetes chart. This helps you effortlessly see how factors like diet and exercise impact your glucose levels for truly smart tracking."
+      },
+      {
+        "title": "What makes AI Diabetes technology different from traditional diabetes management apps?",
+        "description": "AI Diabetes technology represents a breakthrough in diabetes care by combining artificial intelligence with practical health management. Unlike traditional apps that require manual data entry, AI Diabetes automatically recognizes food and glucose readings through advanced computer vision. The AI Diabetes system learns from millions of data points to provide personalized insights, making diabetes management more accurate and effortless. This AI Diabetes approach transforms tedious logging into a simple photo-taking process, while delivering smarter analysis than conventional diabetes tracking methods."
       }
     ]
   },
@@ -420,7 +431,7 @@
     "buttons": [
       {
         "title": "Start for Free",
-        "url": "https://shipany.ai",
+        "url": "https://ai-diabetes.com",
         "target": "_blank",
         "icon": "GoArrowUpRight"
       }

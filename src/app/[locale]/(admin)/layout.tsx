@@ -22,10 +22,10 @@ export default async function AdminLayout({
 
   const sidebar: Sidebar = {
     brand: {
-      title: "ShipAny",
+      title: "AI Diabetes",
       logo: {
         src: "/logo.png",
-        alt: "ShipAny",
+        alt: "AI Diabetes",
       },
       url: "/admin",
     },
@@ -67,19 +67,19 @@ export default async function AdminLayout({
       items: [
         {
           title: "Documents",
-          url: "https://docs.shipany.ai",
+          url: "https://docs.ai-diabetes.com",
           target: "_blank",
           icon: "RiFileTextLine",
         },
         {
           title: "Blocks",
-          url: "https://shipany.ai/blocks",
+          url: "https://ai-diabetes.com/blocks",
           target: "_blank",
           icon: "RiDashboardLine",
         },
         {
           title: "Showcases",
-          url: "https://shipany.ai/showcase",
+          url: "https://ai-diabetes.com/showcase",
           target: "_blank",
           icon: "RiAppsLine",
         },
@@ -95,7 +95,7 @@ export default async function AdminLayout({
         },
         {
           title: "Github",
-          url: "https://github.com/shipanyai/shipany-template-one",
+          url: "https://github.com/your-username/ai-diabetes-app",
           target: "_blank",
           icon: "RiGithubLine",
         },
@@ -107,7 +107,7 @@ export default async function AdminLayout({
         },
         {
           title: "X",
-          url: "https://x.com/shipanyai",
+          url: "https://x.com/aidiabetesapp",
           target: "_blank",
           icon: "RiTwitterLine",
         },

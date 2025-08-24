@@ -10,6 +10,9 @@ export interface SectionItem {
   url?: string;
   target?: string;
   children?: SectionItem[];
+  date?: string;
+  variant?: string;
+  button_text?: string;
 }
 
 export interface Section {
