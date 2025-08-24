@@ -81,13 +81,21 @@ export interface DiabetesAIConfig {
 // 默认配置
 export const defaultAIConfig: DiabetesAIConfig = {
   dify: {
-    // 注意：API Key 是应用密钥（app-xxx格式），工作流通过API Key识别
-    apiKey: process.env.DIFY_API_KEY || 'app-QrakcrmHgHy1E0XLd1yhqXFU',
-    baseUrl: process.env.DIFY_BASE_URL || 'https://api.dify.ai',
+    baseUrl: process.env.DIFY_BASE_URL || 'https://api.dify.ai/v1',
+    apiKey: (() => {
+      const apiKey = process.env.DIFY_API_KEY || '';
+      console.log('🔑 DIFY API Key 调试:', {
+        hasApiKey: !!apiKey,
+        keyLength: apiKey.length,
+        keyPrefix: apiKey.substring(0, 10) + '...',
+        envVarName: 'DIFY_API_KEY'
+      });
+      return apiKey;
+    })(),
     endpoints: {
-      foodRecognition: '/v1/workflows/run',
-      bloodGlucoseAnalysis: '/v1/workflows/run',
-      nutritionAdvice: '/v1/chat-messages'
+      foodRecognition: '/workflows/run',
+      bloodGlucoseAnalysis: '/workflows/run',
+      nutritionAdvice: '/workflows/run'
     }
   },
   
@@ -121,7 +129,7 @@ export const defaultAIConfig: DiabetesAIConfig = {
   
   features: {
     foodRecognition: {
-      enabled: process.env.NEXT_PUBLIC_FOOD_RECOGNITION_ENABLED === 'true',
+      enabled: true, // 食物识别功能永远启用，不再依赖环境变量
       accuracy: 0.95, // 95% 准确率目标
       supportedFormats: ['jpg', 'jpeg', 'png', 'webp'],
       maxFileSize: 10 * 1024 * 1024 // 10MB

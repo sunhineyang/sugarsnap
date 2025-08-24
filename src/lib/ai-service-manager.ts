@@ -56,12 +56,7 @@ export class AIServiceManager {
    */
   async recognizeFood(imageFile: File): Promise<AIServiceResponse<FoodRecognitionResult[]>> {
     try {
-      if (!this.config.features.foodRecognition.enabled) {
-        return {
-          success: false,
-          error: '食物识别功能已禁用'
-        };
-      }
+      // 食物识别功能永远启用，移除enabled检查
       
       // 检查文件大小
       if (imageFile.size > this.config.features.foodRecognition.maxFileSize) {

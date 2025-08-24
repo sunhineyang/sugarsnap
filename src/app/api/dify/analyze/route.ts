@@ -242,13 +242,7 @@ export async function POST(request: Request) {
     // 使用 AI 配置进行文件验证
     const foodConfig = defaultAIConfig.features.foodRecognition;
     
-    // 验证功能是否启用
-    if (!foodConfig.enabled) {
-      return NextResponse.json(
-        { success: false, error: '食物识别功能已禁用', code: 'FEATURE_DISABLED' },
-        { status: 503 }
-      );
-    }
+    // 食物识别功能永远启用，移除enabled检查
     
     // 验证文件类型
     const fileExtension = imageFile.name.split('.').pop()?.toLowerCase();

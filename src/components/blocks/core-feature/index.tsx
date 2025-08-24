@@ -74,7 +74,7 @@ export default function CoreFeatureBlock({ data }: CoreFeatureProps) {
       const controller = new AbortController();
       const timeoutId = setTimeout(() => {
         controller.abort();
-      }, 30000); // 30秒超时
+      }, 60000); // 设置60秒超时，给AI分析更多时间
       
       // 调用 Dify API
       const response = await fetch('/api/dify/analyze', {
@@ -169,18 +169,20 @@ export default function CoreFeatureBlock({ data }: CoreFeatureProps) {
       let errorMsg = '分析失败，请重试';
       if (error.message) {
         if (error.message.includes('超时') || error.name === 'AbortError') {
-          errorMsg = '网络超时，请检查网络连接后重试';
+          errorMsg = 'AI分析需要较长时间，请稍后重试或检查网络连接';
         } else if (error.message.includes('文件大小')) {
           errorMsg = '文件过大，请选择小于 10MB 的图片';
         } else if (error.message.includes('格式')) {
           errorMsg = '图片格式不支持，请选择 JPG、PNG 等常见格式';
         } else if (error.message.includes('配置错误')) {
           errorMsg = '服务暂时不可用，请稍后重试';
+        } else if (error.message.includes('FEATURE_DISABLED')) {
+          errorMsg = '食物识别功能暂时不可用，请联系管理员';
         } else {
           errorMsg = error.message;
         }
       } else if (error.name === 'AbortError') {
-        errorMsg = '请求超时，请检查网络连接后重试';
+        errorMsg = 'AI分析需要较长时间，请稍后重试或检查网络连接';
       }
       
       setErrorMessage(errorMsg);
@@ -239,7 +241,7 @@ export default function CoreFeatureBlock({ data }: CoreFeatureProps) {
                         }
                       }}
                     >
-                      <Camera className="w-16 h-16 text-muted-foreground" />
+                      <Camera className="w-16 h-16 text-primary" />
                     </div>
                     <h3 className="text-xl font-semibold mb-2">
                       {data.camera?.title || "开始分析"}
@@ -333,21 +335,42 @@ export default function CoreFeatureBlock({ data }: CoreFeatureProps) {
                           {/* 食物详细列表 */}
                           <div className="space-y-4">
                             {currentResult.food.allFoods.map((food: any, index: number) => {
-                              // 根据推荐等级设置颜色
+                              // 添加调试日志
+                              console.log('🔍 食物推荐调试:', {
+                                foodName: food.name,
+                                recommendation: food.recommendation,
+                                recommendationType: typeof food.recommendation,
+                                foodObject: food
+                              });
+                              
+                              // 根据推荐等级设置颜色（支持中英文）
                               const getRecommendationColor = (recommendation: string) => {
+                                console.log('🎨 颜色匹配调试:', { recommendation, match: recommendation === '绿灯' });
                                 switch (recommendation) {
-                                  case '绿灯': return 'text-green-600 bg-green-50 border-green-200';
-                                  case '黄灯': return 'text-yellow-600 bg-yellow-50 border-yellow-200';
-                                  case '红灯': return 'text-red-600 bg-red-50 border-red-200';
+                                  case '绿灯':
+                                  case 'Green Light':
+                                    return 'text-green-600 bg-green-50 border-green-200';
+                                  case '黄灯':
+                                  case 'Yellow Light':
+                                    return 'text-yellow-600 bg-yellow-50 border-yellow-200';
+                                  case '红灯':
+                                  case 'Red Light':
+                                    return 'text-red-600 bg-red-50 border-red-200';
                                   default: return 'text-gray-600 bg-gray-50 border-gray-200';
                                 }
                               };
                               
                               const getRecommendationIcon = (recommendation: string) => {
                                 switch (recommendation) {
-                                  case '绿灯': return '🟢';
-                                  case '黄灯': return '🟡';
-                                  case '红灯': return '🔴';
+                                  case '绿灯':
+                                  case 'Green Light':
+                                    return '🟢';
+                                  case '黄灯':
+                                  case 'Yellow Light':
+                                    return '🟡';
+                                  case '红灯':
+                                  case 'Red Light':
+                                    return '🔴';
                                   default: return '⚪';
                                 }
                               };

@@ -15,7 +15,7 @@ export function baseOptions(locale: string): BaseLayoutProps {
             height={28}
             className=""
           />
-          <span className="text-lg text-primary font-bold">AI Diabetes</span>
+          <span className="text-lg text-primary font-bold">Sugar Snap - AI Diabetes</span>
         </>
       ),
       transparentMode: "top",
