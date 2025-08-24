@@ -1,0 +1,90 @@
+{
+  "showcase": {
+    "name": "showcase",
+    "title": "基于 SugarSnap 构建的糖尿病管理应用",
+    "description": "简单易用，快速上手。",
+    "items": [
+      {
+        "title": "糖管家",
+        "description": "智能血糖监测",
+        "url": "https://sugarsnap.ai",
+        "target": "_blank",
+        "image": {
+          "src": "/imgs/showcases/7.png"
+        }
+      },
+      {
+        "title": "营养助手",
+        "description": "AI 营养分析",
+        "url": "https://sugarsnap.ai",
+        "target": "_blank",
+        "image": {
+          "src": "/imgs/showcases/5.png"
+        }
+      },
+      {
+        "title": "健康日记",
+        "description": "糖尿病健康记录",
+        "url": "https://sugarsnap.ai",
+        "target": "_blank",
+        "image": {
+          "src": "/imgs/showcases/1.png"
+        }
+      },
+      {
+        "title": "饮食顾问",
+        "description": "AI 饮食建议",
+        "url": "https://sugarsnap.ai",
+        "target": "_blank",
+        "image": {
+          "src": "/imgs/showcases/2.png"
+        }
+      },
+      {
+        "title": "运动伙伴",
+        "description": "糖尿病运动指导",
+        "url": "https://sugarsnap.ai",
+        "target": "_blank",
+        "image": {
+          "src": "/imgs/showcases/3.png"
+        }
+      },
+      {
+        "title": "血糖预测",
+        "description": "AI 血糖趋势分析",
+        "url": "https://sugarsnap.ai",
+        "target": "_blank",
+        "image": {
+          "src": "/imgs/showcases/4.png"
+        }
+      },
+      {
+        "title": "药物提醒",
+        "description": "智能用药管理",
+        "url": "https://sugarsnap.ai",
+        "target": "_blank",
+        "image": {
+          "src": "/imgs/showcases/6.png"
+        }
+      },
+      {
+        "title": "医生助手",
+        "description": "AI 医疗咨询",
+        "url": "https://sugarsnap.ai",
+        "target": "_blank",
+        "image": {
+          "src": "/imgs/showcases/8.png"
+        }
+      },
+      {
+        "title": "家庭共享",
+        "description": "糖尿病家庭管理",
+        "url": "https://sugarsnap.ai",
+        "target": "_blank",
+        "image": {
+          "src": "/imgs/showcases/9.png"
+        }
+      }
+    ]
+  }
+}

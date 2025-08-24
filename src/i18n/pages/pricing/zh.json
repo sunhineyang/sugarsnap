@@ -1,0 +1,323 @@
+{
+  "pricing": {
+    "name": "pricing",
+    "label": "定价",
+    "title": "定价",
+    "description": "获取 SugarSnap 的所有功能，轻松管理您的糖尿病健康。",
+    "groups": [
+      {
+        "name": "one-time",
+        "title": "一次性付费"
+      },
+      {
+        "name": "monthly",
+        "title": "月付",
+        "is_featured": true,
+        "label": "节省 15%"
+      },
+      {
+        "name": "yearly",
+        "title": "年付"
+      }
+    ],
+    "items": [
+      {
+        "title": "基础版",
+        "description": "开始您的糖尿病智能管理之旅。",
+        "features_title": "包含",
+        "features": [
+          "100 次识别额度，有效期 1 个月",
+          "AI 食物识别功能",
+          "基础血糖记录",
+          "营养成分分析",
+          "数据云端同步",
+          "基础健康报告",
+          "客服支持"
+        ],
+        "interval": "one-time",
+        "amount": 9900,
+        "cn_amount": 69900,
+        "currency": "USD",
+        "price": "$99",
+        "original_price": "$199",
+        "unit": "一次性",
+        "is_featured": false,
+        "tip": "一次付费，终身使用！",
+        "button": {
+          "title": "获取 SugarSnap",
+          "url": "/#pricing",
+          "icon": "RiFlashlightFill"
+        },
+        "product_id": "starter",
+        "product_name": "SugarSnap 基础版",
+        "credits": 100,
+        "valid_months": 1,
+        "group": "one-time"
+      },
+      {
+        "title": "标准版",
+        "description": "全面的糖尿病管理解决方案。",
+        "label": "热门",
+        "features_title": "基础版的所有功能，另外包含",
+        "features": [
+          "200 次识别额度，有效期 3 个月",
+          "高级AI识别算法",
+          "详细营养报告",
+          "血糖趋势分析",
+          "个性化饮食建议",
+          "专业客服支持",
+          "数据导出功能",
+          "终身免费更新"
+        ],
+        "interval": "one-time",
+        "amount": 19900,
+        "cn_amount": 139900,
+        "currency": "USD",
+        "price": "$199",
+        "original_price": "$299",
+        "unit": "一次性",
+        "is_featured": true,
+        "tip": "一次付费，终身使用！",
+        "button": {
+          "title": "获取 SugarSnap",
+          "url": "/#pricing",
+          "icon": "RiFlashlightFill"
+        },
+        "product_id": "standard",
+        "product_name": "SugarSnap 标准版",
+        "credits": 200,
+        "valid_months": 3,
+        "group": "one-time"
+      },
+      {
+        "title": "高级版",
+        "description": "专业级糖尿病管理，医疗级精准度。",
+        "features_title": "标准版的所有功能，另外包含",
+        "features": [
+          "300 次识别额度，有效期 1 年",
+          "医疗级AI识别精度",
+          "专业医师咨询",
+          "个人健康档案",
+          "家庭共享功能",
+          "API接口访问",
+          "优先技术支持"
+        ],
+        "interval": "one-time",
+        "amount": 29900,
+        "cn_amount": 199900,
+        "currency": "USD",
+        "price": "$299",
+        "original_price": "$399",
+        "unit": "一次性",
+        "is_featured": false,
+        "tip": "一次付费，终身使用！",
+        "button": {
+          "title": "获取 SugarSnap",
+          "url": "/#pricing",
+          "icon": "RiFlashlightFill"
+        },
+        "product_id": "premium",
+        "product_name": "SugarSnap 高级版",
+        "credits": 300,
+        "valid_months": 12,
+        "group": "one-time"
+      },
+      {
+        "title": "基础版",
+        "description": "开始您的糖尿病智能管理之旅。",
+        "features_title": "包含",
+        "features": [
+          "100 次识别额度，有效期 1 个月",
+          "AI 食物识别功能",
+          "基础血糖记录",
+          "营养成分分析",
+          "数据云端同步",
+          "基础健康报告",
+          "客服支持"
+        ],
+        "interval": "month",
+        "amount": 8900,
+        "currency": "USD",
+        "price": "$89",
+        "original_price": "$99",
+        "unit": "/ 月",
+        "is_featured": false,
+        "tip": "按月付费，灵活管理！",
+        "button": {
+          "title": "获取 SugarSnap",
+          "url": "/#pricing",
+          "icon": "RiFlashlightFill"
+        },
+        "product_id": "starter-monthly",
+        "product_name": "SugarSnap 基础版月付",
+        "credits": 100,
+        "valid_months": 1,
+        "group": "monthly"
+      },
+      {
+        "title": "标准版",
+        "description": "全面的糖尿病管理解决方案。",
+        "label": "热门",
+        "features_title": "基础版的所有功能，另外包含",
+        "features": [
+          "200 次识别额度，有效期 1 个月",
+          "高级AI识别算法",
+          "详细营养报告",
+          "血糖趋势分析",
+          "个性化饮食建议",
+          "专业客服支持",
+          "数据导出功能",
+          "终身免费更新"
+        ],
+        "interval": "month",
+        "amount": 16900,
+        "currency": "USD",
+        "price": "$169",
+        "original_price": "$199",
+        "unit": "/ 月",
+        "is_featured": true,
+        "tip": "按月付费，全面管理糖尿病健康。",
+        "button": {
+          "title": "获取 SugarSnap",
+          "url": "/#pricing",
+          "icon": "RiFlashlightFill"
+        },
+        "product_id": "standard-monthly",
+        "product_name": "SugarSnap 标准版月付",
+        "credits": 200,
+        "valid_months": 1,
+        "group": "monthly"
+      },
+      {
+        "title": "高级版",
+        "description": "专业级糖尿病管理，医疗级精准度。",
+        "features_title": "标准版的所有功能，另外包含",
+        "features": [
+          "300 次识别额度，有效期 1 个月",
+          "医疗级AI识别精度",
+          "专业医师咨询",
+          "个人健康档案",
+          "家庭共享功能",
+          "API接口访问",
+          "优先技术支持"
+        ],
+        "interval": "month",
+        "amount": 24900,
+        "currency": "USD",
+        "price": "$249",
+        "original_price": "$299",
+        "unit": "/ 月",
+        "is_featured": false,
+        "tip": "按月付费，专业级糖尿病管理。",
+        "button": {
+          "title": "获取 SugarSnap",
+          "url": "/#pricing",
+          "icon": "RiFlashlightFill"
+        },
+        "product_id": "premium-monthly",
+        "product_name": "SugarSnap 高级版月付",
+        "credits": 300,
+        "valid_months": 1,
+        "group": "monthly"
+      },
+      {
+        "title": "基础版",
+        "description": "开始您的糖尿病智能管理之旅。",
+        "features_title": "包含",
+        "features": [
+          "100 次识别额度，有效期 1 年",
+          "AI 食物识别功能",
+          "基础血糖记录",
+          "营养成分分析",
+          "数据云端同步",
+          "基础健康报告",
+          "客服支持"
+        ],
+        "interval": "year",
+        "amount": 82800,
+        "currency": "USD",
+        "price": "$69",
+        "original_price": "$89",
+        "unit": "/ 月",
+        "is_featured": false,
+        "tip": "年付优惠，长期健康管理！",
+        "button": {
+          "title": "获取 SugarSnap",
+          "url": "/#pricing",
+          "icon": "RiFlashlightFill"
+        },
+        "product_id": "starter-yearly",
+        "product_name": "SugarSnap 基础版年付",
+        "credits": 1200,
+        "valid_months": 12,
+        "group": "yearly"
+      },
+      {
+        "title": "标准版",
+        "description": "全面的糖尿病管理解决方案。",
+        "label": "热门",
+        "features_title": "基础版的所有功能，另外包含",
+        "features": [
+          "200 次识别额度，有效期 1 年",
+          "高级AI识别算法",
+          "详细营养报告",
+          "血糖趋势分析",
+          "个性化饮食建议",
+          "专业客服支持",
+          "数据导出功能",
+          "终身免费更新"
+        ],
+        "interval": "year",
+        "amount": 154800,
+        "currency": "USD",
+        "price": "$129",
+        "original_price": "$169",
+        "unit": "/ 月",
+        "is_featured": true,
+        "tip": "年付优惠，全面管理糖尿病健康。",
+        "button": {
+          "title": "获取 SugarSnap",
+          "url": "/#pricing",
+          "icon": "RiFlashlightFill"
+        },
+        "product_id": "standard-yearly",
+        "product_name": "SugarSnap 标准版年付",
+        "credits": 2400,
+        "valid_months": 12,
+        "group": "yearly"
+      },
+      {
+        "title": "高级版",
+        "description": "专业级糖尿病管理，医疗级精准度。",
+        "features_title": "标准版的所有功能，另外包含",
+        "features": [
+          "300 次识别额度，有效期 1 年",
+          "医疗级AI识别精度",
+          "专业医师咨询",
+          "个人健康档案",
+          "家庭共享功能",
+          "API接口访问",
+          "优先技术支持"
+        ],
+        "interval": "year",
+        "amount": 226800,
+        "currency": "USD",
+        "price": "$189",
+        "original_price": "$249",
+        "unit": "/ 月",
+        "is_featured": false,
+        "tip": "年付优惠，专业级糖尿病管理。",
+        "button": {
+          "title": "获取 SugarSnap",
+          "url": "/#pricing",
+          "icon": "RiFlashlightFill"
+        },
+        "product_id": "premium-yearly",
+        "product_name": "SugarSnap 高级版年付",
+        "credits": 3600,
+        "valid_months": 12,
+        "group": "yearly"
+      }
+    ]
+  }
+}

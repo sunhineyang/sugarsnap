@@ -1,0 +1,551 @@
+{
+  "template": "shipany-template-one",
+  "theme": "light",
+  "header": {
+    "brand": {
+      "title": "Sugar Snap",
+      "logo": {
+        "src": "/logo.png",
+        "alt": "AI Diabetes Logo - Simplifying diabetes management"
+      },
+      "url": "/"
+    },
+    "nav": {
+      "items": [
+        {
+          "title": "Features",
+          "url": "/#feature",
+          "icon": "RiSparkling2Line"
+        }
+      ]
+    },
+    "buttons": [
+      {
+        "title": "Get Started",
+        "url": "https://shipany.ai",
+        "target": "_blank",
+        "variant": "default",
+        "icon": "RiArrowRightUpLine"
+      }
+    ],
+    "show_sign": true,
+    "show_theme": true,
+    "show_locale": true
+  },
+  "hero": {
+    "title": "AI Diabetes Management, Make Everything Simple.",
+    "highlight_text": "AI Diabetes Management",
+    "description": "Snap a photo. See your food & blood sugar data in seconds. aidiabetes.net ends tedious manual logging. Our AI blood sugar tracker automatically identifies and records your meals and glucose readings, making it easy to manage your diabetes diet for truly intelligent diabetes care.",
+    "announcement": {
+      "label": "Slogan",
+      "title": "Less sugar, more sweetness！",
+      "url": "/#pricing"
+    },
+    "tip": "",
+    "buttons": [
+      {
+        "title": "Start for Free Now",
+        "icon": "RiFlashlightFill",
+        "url": "/#pricing",
+        "target": "_self",
+        "variant": "default"
+      },
+      {
+        "title": "Email Us",
+        "icon": "RiMailFill",
+        "url": "mailto:0992sunshine@gmail.com",
+        "target": "_blank",
+        "variant": "outline"
+      }
+    ],
+    "show_happy_users": false,
+    "show_badge": false
+  },
+  "branding": {
+    "title": "Powered by Leading-Edge AI, Trusted by Users Worldwide",
+    "items": [
+      {
+        "title": "Next.js",
+        "image": {
+          "src": "/imgs/logos/nextjs.svg",
+          "alt": "Next.js framework powering AI Diabetes app"
+        }
+      },
+      {
+        "title": "React",
+        "image": {
+          "src": "/imgs/logos/react.svg",
+          "alt": "React technology for a smooth AI Diabetes UI"
+        }
+      },
+      {
+        "title": "Vercel",
+        "image": {
+          "src": "/imgs/logos/vercel.svg",
+          "alt": "Vercel for globally accelerated AI Diabetes services"
+        }
+      },
+      {
+        "title": "HIPAA Compliant",
+        "image": {
+          "src": "/imgs/logos/hipaa.svg",
+          "alt": "AI Diabetes is HIPAA Compliant, ensuring health data security"
+        }
+      },
+      {
+        "title": "GDPR Ready",
+        "image": {
+          "src": "/imgs/logos/gdpr.svg",
+          "alt": "AI Diabetes is GDPR Ready, protecting user privacy"
+        }
+      }
+    ]
+  },
+  "introduce": {
+    "name": "introduce",
+    "title": "Ditch Manual Logs, Embrace the AI Diabetes Lifestyle",
+    "label": "Core Technology",
+    "description": "The mission of aidiabetes.net is to make complex diabetes care astonishingly simple and intuitive. We believe that with powerful AI Diabetes technology, everyone can effortlessly track blood sugar and understand their diet. You no longer need to manually estimate and enter data; just a simple snap, and our AI Diabetes system handles the rest. This not only saves you precious time but, more importantly, provides accurate, instant feedback to help you make smarter health decisions.",
+    "image": {
+      "src": "/imgs/features/1.png",
+      "alt": "AI Diabetes app interface showing clear food and blood sugar data"
+    },
+    "items": [
+      {
+        "title": "Instant AI Food Scanner",
+        "description": "Just snap a photo of your meal, and our food scanner will identify the food and estimate nutritional content like carbs and calories in seconds. It's the first step to optimizing your diabetes diet.",
+        "icon": "RiCameraLensFill"
+      },
+      {
+        "title": "Effortless Blood Sugar Log (with OCR)",
+        "description": "Similarly, by taking a photo, our Optical Character Recognition (OCR) technology automatically reads and records the glucose reading from your meter. Say goodbye to manual entry errors and track blood sugar with precision and ease.",
+        "icon": "RiDashboard2Line"
+      },
+      {
+        "title": "Clear 7, 14, 28-Day Diabetes Charts",
+        "description": "The system automatically integrates your diet and glucose data into a clear diabetes chart. By observing long-term trends, you can easily discover how food impacts your blood sugar, effectively improving your diabetes care plan.",
+        "icon": "RiBarChart2Fill"
+      }
+    ]
+  },
+  "coreFeature": {
+    "title": "AI SCANNER",
+    "description": "AI Food Scanner, Blood Sugar Scanner - Instant analysis with advanced AI technology",
+    "camera": {
+      "title": "Start Analysis",
+      "description": "Choose to take a photo or upload an image for AI analysis",
+      "placeholder": "Select an image to analyze",
+      "button_text": "Start Analysis"
+    },
+    "quick_actions": [
+      {
+        "title": "Photo Recognition",
+        "description": "Take a photo for instant analysis",
+        "type": "camera",
+        "action": "camera"
+      },
+      {
+        "title": "Upload Image",
+        "description": "Upload an image from gallery",
+        "type": "upload",
+        "action": "upload"
+      }
+    ],
+    "analysis": {
+      "title": "AI Analysis",
+      "uploading_text": "Uploading...",
+      "analyzing_text": "AI analyzing...",
+      "completed_text": "Analysis completed",
+      "error_text": "Analysis failed",
+      "loading_text": "Analyzing your image...",
+      "success_text": "Analysis completed successfully",
+      "file_type_error": "Please select an image file"
+    },
+    "results": {
+      "title": "Analysis Results",
+      "empty_text": "No analysis results yet",
+      "food_recognition_title": "Food Recognition Results",
+      "blood_sugar_title": "Blood Sugar Detection Results",
+      "food_name": "Food Name",
+      "calories": "Calories",
+      "carbs": "Carbohydrates",
+      "protein": "Protein",
+      "fat": "Fat",
+      "fiber": "Fiber",
+      "sugar": "Sugar",
+      "blood_sugar_value": "Blood Sugar Value",
+      "confidence": "Confidence",
+      "status_normal": "Normal",
+      "status_high": "High",
+      "status_low": "Low",
+      "unit_mg_dl": "mg/dL",
+      "unit_g": "g",
+      "unit_kcal": "kcal",
+      "save_button_text": "Save Record"
+    },
+    "actions": {
+      "save_record": "Save Record",
+      "retry_analysis": "Retry Analysis",
+      "start_over": "Start Over"
+    },
+    "history": {
+      "title": "Recent Records",
+      "empty_text": "No records yet",
+      "view_all_text": "View All Records",
+      "max_items": 10
+    },
+    "tips": {
+      "title": "Usage Tips",
+      "items": [
+        "Ensure good lighting when taking photos",
+        "Keep the camera steady for better recognition",
+        "Include the entire food item in the frame"
+      ]
+    }
+  },
+  "benefit": {
+    "name": "benefit",
+    "title": "Discover Actionable Insights from Your Daily Life",
+    "label": "User Benefits",
+    "description": "Data is just data until it becomes insight. aidiabetes.net is more than a logger; it's your intelligent analyst. Our AI Diabetes system analyzes the connection between your eating habits and blood sugar fluctuations, helping you understand the 'why' behind spikes and dips. These actionable insights empower you to make more confident food choices, elevating your diabetes diet management to a new, personalized level.",
+    "items": [
+      {
+        "title": "Get Personalized Dietary Feedback",
+        "description": "The same food affects people differently. By consistently using our AI food scanner, you'll see exactly how specific foods, like rice or bread, impact your personal blood sugar levels, rather than relying on generic glycemic index values.",
+        "icon": "RiUserHeartLine",
+        "image": {
+          "src": "/imgs/features/2.png",
+          "alt": "User viewing personalized post-meal blood sugar feedback on the AI Diabetes app"
+        }
+      },
+      {
+        "title": "Easily Understand Blood Sugar Patterns",
+        "description": "Our AI blood sugar tracker automatically generates visual diabetes charts, clearly showing your glucose patterns over a day, week, or month. Identify morning, post-meal, or post-exercise highs and lows to better adjust your lifestyle.",
+        "icon": "RiLineChartLine",
+        "image": {
+          "src": "/imgs/features/3.png",
+          "alt": "A clear diabetes chart from the AI Diabetes app showing a user's weekly blood sugar patterns"
+        }
+      },
+      {
+        "title": "Communicate Effectively with Doctors and Family",
+        "description": "Compile complex daily logs into a simple, professional report. You can easily export or share your data and diabetes chart, allowing your doctor or family to intuitively understand your condition and collaborate on your diabetes care plan.",
+        "icon": "RiTeamLine",
+        "image": {
+          "src": "/imgs/features/4.png",
+          "alt": "User showing their blood sugar data report to a doctor using the AI Diabetes app"
+        }
+      }
+    ]
+  },
+  "usage": {
+    "name": "usage",
+    "title": "Start Your AI Diabetes Journey in Just Four Simple Steps",
+    "description": "We've designed the aidiabetes.net process to be incredibly streamlined, ensuring you can get started in under a minute and immediately benefit from the convenience of AI Diabetes.",
+    "image": {
+      "src": "/imgs/features/1.png",
+      "alt": "A user taking a photo with the aidiabetes.net app on their phone"
+    },
+    "image_position": "left",
+    "text_align": "left",
+    "items": [
+      {
+        "title": "Step 1: Snap a Photo",
+        "description": "Open the app, aim it at your meal and your glucose meter (with the glucose strips inserted and showing a result), then tap the shutter. One photo captures both key pieces of information.",
+        "image": {
+          "src": "/imgs/features/5.png",
+          "alt": "Close-up shot of a smartphone camera aimed at a plate of food and a glucose meter"
+        }
+      },
+      {
+        "title": "Step 2: AI Analyzes Automatically",
+        "description": "Our AI Diabetes system gets to work instantly. It identifies the food in the photo, estimates its nutritional value, and uses OCR to accurately read the blood sugar number. The entire process is automated, requiring no intervention from you.",
+        "image": {
+          "src": "/imgs/features/6.png",
+          "alt": "Animation showing AI analyzing an image, identifying food and numbers"
+        }
+      },
+      {
+        "title": "Step 3: View Insights & Charts",
+        "description": "Seconds later, you'll see a clear log entry with the food image, nutritional info, and glucose reading. The data is automatically synced to your diabetes chart for you to review and analyze trends anytime.",
+        "image": {
+          "src": "/imgs/features/7.png",
+          "alt": "App interface shows the analyzed log entry and an updated chart"
+        }
+      },
+      {
+        "title": "Step 4: AI Medical Insights & Recommendations",
+        "description": "Our AI analyzes your historical data trends and provides personalized medical insights and health recommendations. These AI-generated suggestions are designed to assist your healthcare provider in delivering better, more informed treatment plans tailored to your specific needs.",
+        "image": {
+          "src": "/imgs/features/8.png",
+          "alt": "AI-generated medical insights and recommendations displayed on the app interface"
+        }
+      }
+    ]
+  },
+  "feature": {
+    "name": "feature",
+    "title": "We Offer More Than Just a Logging Tool",
+    "description": "aidiabetes.net is committed to being your comprehensive diabetes care partner. Beyond our core photo-logging feature, we provide a suite of practical tools to support your entire health journey.",
+    "items": [
+      {
+        "title": "Professional Knowledge Base",
+        "description": "Access built-in Q&As and articles about diabetes diet, exercise, and lifestyle, all reviewed by medical professionals to help you make informed choices.",
+        "icon": "RiBookOpenLine"
+      },
+      {
+        "title": "Data Security & Privacy",
+        "description": "Your health data is extremely sensitive. We use bank-level encryption and strictly adhere to HIPAA and GDPR privacy regulations to ensure your information is always secure.",
+        "icon": "RiKey2Fill"
+      },
+      {
+        "title": "Data Export & Sharing",
+        "description": "Easily export your blood sugar and food logs as PDF or CSV files for personal backup or sharing with your endocrinologist or dietitian.",
+        "icon": "RiShareForwardFill"
+      },
+      {
+        "title": "Medication & Measurement Reminders",
+        "description": "Set personalized reminders to ensure you never forget to take medication, inject insulin, or check your blood sugar. It's a key part of maintaining stable glucose levels.",
+        "icon": "RiAlarmLine"
+      },
+      {
+        "title": "Multi-Device Cloud Sync",
+        "description": "All your data is securely stored in the cloud and syncs seamlessly between your phone, tablet, and computer. Access your AI Diabetes data anytime, anywhere.",
+        "icon": "RiCloudLine"
+      },
+      {
+        "title": "Active User Community",
+        "description": "Connect with other users in our community to exchange experiences, share tips, and find new recipes. You are not alone on your diabetes management journey.",
+        "icon": "RiChatSmile3Line"
+      }
+    ]
+  },
+  "stats": {
+    "name": "stats",
+    "label": "The Numbers Speak",
+    "title": "Join Thousands of Users Who Trust aidiabetes.net",
+    "description": "Since our launch, our AI Diabetes platform has helped countless users simplify their daily routines and regain control of their health.",
+    "icon": "FaRegHeart",
+    "items": [
+      {
+        "title": "1,000,000+",
+        "label": "AI Food Scans",
+        "description": "Every scan is a step towards a healthier diet and better understanding."
+      },
+      {
+        "title": "85%",
+        "label": "Average Time Saved on Logging",
+        "description": "Users report that AI Diabetes reduces their logging time from minutes to seconds."
+      },
+      {
+        "title": "30%",
+        "label": "Increase in Time-in-Range",
+        "description": "Through consistent tracking and insights, users report a significant increase in their blood sugar staying within their target range."
+      },
+      {
+        "title": "98%",
+        "label": "User Satisfaction Rate",
+        "description": "We pride ourselves on providing an AI Diabetes tool that truly solves user pain points."
+      }
+    ]
+  },
+  "testimonial": {
+    "name": "testimonial",
+    "label": "Testimonials",
+    "title": "Hear What Our Users Say About AI Diabetes",
+    "description": "Real stories from real users are the best proof of the value of aidiabetes.net. See how they've changed their lives with our tool.",
+    "icon": "GoThumbsup",
+    "items": [
+      {
+        "title": "\"It's a complete game-changer.\"",
+        "label": "John S. - Type 2 Diabetes",
+        "description": "\"I used to hate logging because it was so tedious. With aidiabetes.net, I just take a few pictures a day. The best part is the diabetes chart, which showed me for the first time the real impact fried chicken has on my blood sugar. My A1c is already down 0.8%!\"",
+        "image": {
+          "src": "/imgs/users/1.png",
+          "alt": "Smiling photo of user John S."
+        }
+      },
+      {
+        "title": "\"As a newcomer, I no longer feel lost.\"",
+        "label": "Maria G. - Newly Diagnosed",
+        "description": "\"I was so anxious when I was first diagnosed and had no idea what to eat. The AI food scanner is like my personal nutritionist. I can experiment with different foods and see the results immediately. aidiabetes.net gave me a sense of control and confidence, which was crucial for starting my diabetes care journey.\"",
+        "image": {
+          "src": "/imgs/users/2.png",
+          "alt": "Confident photo of user Maria G."
+        }
+      },
+      {
+        "title": "\"So simple my mom can use it.\"",
+        "label": "Chen L. - Family Member",
+        "description": "\"I was always worried my elderly mother couldn't manage her diabetes diet properly. I set her up with aidiabetes.net, and now she takes pictures herself every day. I can check her data remotely and ensure everything is on track. This AI Diabetes tool has brought our whole family peace of mind.\"",
+        "image": {
+          "src": "/imgs/users/3.png",
+          "alt": "Relieved photo of user Chen L."
+        }
+      }
+    ]
+  },
+  "faq": {
+    "name": "faq",
+    "label": "QUESTIONS?",
+    "title": "Frequently Asked Questions about AI Diabetes & Diet",
+    "description": "Find answers to your questions here. We're committed to making your AI Diabetes experience as transparent and smooth as possible.",
+    "items": [
+      {
+        "title": "Can I Eat Rice with Diabetes? A Data-Driven Answer.",
+        "description": "This is a very common question. The general answer is yes, but portion and type are key. White rice has a high glycemic index (GI) and can spike blood sugar quickly. Brown rice is slightly better due to its fiber content. However, the only way to know for sure is to test your own body. Individual responses vary greatly. We strongly recommend using the AI tool on aidiabetes.net to see the data yourself. Use it to snap a photo of your next meal with rice and your glucose reading. You'll get your personal answer in seconds, which is more valuable than any generic advice."
+      },
+      {
+        "title": "How does aidiabetes.net keep my health data secure?",
+        "description": "We treat data security as our highest priority. All data is end-to-end encrypted during transit and at rest. Our servers comply with the strict security standards of HIPAA (Health Insurance Portability and Accountability Act), ensuring your personal health information receives the highest level of protection. Your privacy and trust are the foundation of our service."
+      },
+      {
+        "title": "How accurate is the AI food scanner?",
+        "description": "Our AI model is trained on millions of food images and is highly accurate for common foods and standard portions. For complex, mixed dishes, it does its best to break down components and provide an estimate. We are also constantly optimizing the algorithm through machine learning. Importantly, we allow you to edit and fine-tune the AI's suggestions to ensure your logs are perfectly accurate."
+      },
+      {
+        "title": "Do I need to buy a special glucose meter or device?",
+        "description": "Not at all. aidiabetes.net is designed for convenience. You only need a smartphone with a camera to use all our core features. Our OCR technology is compatible with the vast majority of mainstream glucose meter brands on the market, with no extra hardware or connections required."
+      },
+      {
+        "title": "How does the AI Diabetes system help me track blood sugar?",
+        "description": "It revolutionizes how you track blood sugar in two ways: 1. Automated Logging: By taking a photo, it automatically captures the reading from your meter, eliminating the hassle and errors of manual input. 2. Contextual Analysis: It doesn't just record a number; it links your glucose reading to your food log from the same time, visualizing the connection in your diabetes chart. This helps you effortlessly see how factors like diet and exercise impact your glucose levels for truly smart tracking."
+      }
+    ]
+  },
+  "cta": {
+    "name": "cta",
+    "title": "Ready to Simplify Your Diabetes Management?",
+    "description": "Start your free trial of aidiabetes.net today and experience firsthand how simple, intuitive, and powerful AI-driven diabetes care can be. Take the first step towards a new chapter in your health in just seconds.",
+    "buttons": [
+      {
+        "title": "Start for Free",
+        "url": "https://shipany.ai",
+        "target": "_blank",
+        "icon": "GoArrowUpRight"
+      },
+      {
+        "title": "View Documentation",
+        "url": "https://docs.shipany.ai",
+        "target": "_blank",
+        "variant": "outline"
+      }
+    ]
+  },
+  "footer": {
+    "name": "footer",
+    "brand": {
+      "title": "AI Diabetes",
+      "description": "Our mission is to empower people with diabetes worldwide by providing the simplest, smartest health management tool through innovative AI Diabetes technology for better diabetes care.",
+      "logo": {
+        "src": "/logo.png",
+        "alt": "AI Diabetes Footer Logo"
+      },
+      "url": "/"
+    },
+    "copyright": "© 2025 aidiabetes.net. All Rights Reserved.",
+    "nav": {
+      "items": [
+        {
+          "title": "AI Tools",
+          "children": [
+            {
+              "title": "AI Food Scanner",
+              "url": "/#introduce",
+              "target": "_self"
+            },
+            {
+              "title": "Blood Sugar Log",
+              "url": "/#introduce",
+              "target": "_self"
+            },
+            {
+              "title": "Diabetes Chart",
+              "url": "/#introduce",
+              "target": "_self"
+            },
+            {
+              "title": "Pricing",
+              "url": "/pricing",
+              "target": "_self"
+            }
+          ]
+        },
+        {
+          "title": "Resources",
+          "children": [
+            {
+              "title": "Blog / Q&A",
+              "url": "/blog",
+              "target": "_self"
+            },
+            {
+              "title": "Glossary",
+              "url": "/glossary",
+              "target": "_self"
+            },
+            {
+              "title": "Community",
+              "url": "https://discord.gg/HQNnrzjZQS",
+              "target": "_blank"
+            }
+          ]
+        },
+        {
+          "title": "Company",
+          "children": [
+            {
+              "title": "About Us",
+              "url": "/about",
+              "target": "_self"
+            },
+            {
+              "title": "Contact Us",
+              "url": "/contact",
+              "target": "_self"
+            },
+            {
+              "title": "Careers",
+              "url": "/careers",
+              "target": "_self"
+            }
+          ]
+        }
+      ]
+    },
+    "social": {
+      "items": [
+        {
+          "title": "Twitter / X",
+          "icon": "RiTwitterXFill",
+          "url": "https://x.com/shipanyai",
+          "target": "_blank"
+        },
+        {
+          "title": "Discord",
+          "icon": "RiDiscordFill",
+          "url": "https://discord.gg/HQNnrzjZQS",
+          "target": "_blank"
+        },
+        {
+          "title": "Github",
+          "icon": "RiGithubFill",
+          "url": "https://github.com/shipany",
+          "target": "_blank"
+        }
+      ]
+    },
+    "agreement": {
+      "items": [
+        {
+          "title": "Privacy Policy",
+          "url": "/privacy-policy"
+        },
+        {
+          "title": "Terms of Service",
+          "url": "/terms-of-service"
+        }
+      ]
+    }
+  }
+}

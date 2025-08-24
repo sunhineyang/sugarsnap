@@ -1,0 +1,526 @@
+{
+  "template": "shipany-template-one",
+  "theme": "light",
+  "header": {
+    "brand": {
+      "title": "Sugar Snap",
+      "logo": {
+        "src": "/logo.png",
+        "alt": "AI 糖尿病标志 - 简化糖尿病管理"
+      },
+      "url": "/"
+    },
+    "nav": {
+      "items": [
+        {
+          "title": "功能特点",
+          "url": "/#feature",
+          "icon": "RiSparkling2Line"
+        }
+      ]
+    },
+    "buttons": [
+      {
+        "title": "开始使用",
+        "url": "/#pricing",
+        "target": "_blank",
+        "variant": "default",
+        "icon": "RiArrowRightUpLine"
+      }
+    ],
+    "show_sign": true,
+    "show_theme": true,
+    "show_locale": true
+  },
+  "hero": {
+    "title": "AI 糖尿病管理，让一切变得简单",
+    "highlight_text": "AI 糖尿病管理",
+    "description": "拍张照片，几秒钟内查看您的食物和血糖数据。小糖结束你繁琐的手动记录。我们的AI血糖追踪器自动识别和记录您的餐食和血糖读数，让您轻松管理糖尿病饮食，实现真正智能的糖尿病护理。",
+    "announcement": {
+      "label": "口号",
+      "title": "少糖的生活，也能很甜！",
+      "url": "/#pricing"
+    },
+    "tip": "",
+    "buttons": [
+      {
+        "title": "立即免费开始",
+        "icon": "RiFlashlightFill",
+        "url": "/#pricing",
+        "target": "_self",
+        "variant": "default"
+      },
+      {
+        "title": "联系我们",
+        "icon": "RiMailFill",
+        "url": "mailto:0992sunshine@gmail.com",
+        "target": "_blank",
+        "variant": "outline"
+      }
+    ],
+    "show_happy_users": false,
+    "show_badge": false
+  },
+  "branding": {
+    "title": "受到糖尿病患者的信任",
+    "description": "全球数千名糖尿病患者使用 SugarSnap 轻松管理他们的血糖和饮食。",
+    "items": [
+      {
+        "title": "Next.js",
+        "image": {
+          "src": "/imgs/logos/nextjs.svg",
+          "alt": "Next.js"
+        }
+      },
+      {
+        "title": "React",
+        "image": {
+          "src": "/imgs/logos/react.svg",
+          "alt": "React"
+        }
+      },
+      {
+        "title": "TailwindCSS",
+        "image": {
+          "src": "/imgs/logos/tailwindcss.svg",
+          "alt": "TailwindCSS"
+        }
+      },
+      {
+        "title": "Shadcn/UI",
+        "image": {
+          "src": "/imgs/logos/shadcn.svg",
+          "alt": "Shadcn/UI"
+        }
+      },
+      {
+        "title": "Vercel",
+        "image": {
+          "src": "/imgs/logos/vercel.svg",
+          "alt": "Vercel"
+        }
+      }
+    ]
+  },
+  "introduce": {
+    "name": "introduce",
+    "title": "什么是小糖",
+    "label": "介绍",
+    "description": "小糖是专为糖尿病患者设计的AI血糖管理助手，通过智能识别技术帮助您轻松管理血糖和饮食。",
+    "image": {
+      "src": "/imgs/features/1.png"
+    },
+    "items": [
+      {
+        "title": "即用型模板",
+        "description": "从数十个生产就绪的 AI SaaS 模板中选择，快速启动您的项目。",
+        "icon": "RiNextjsFill"
+      },
+      {
+        "title": "基础设施配置",
+        "description": "立即获取内置最佳实践的可扩展基础设施。",
+        "icon": "RiDatabase2Line"
+      },
+      {
+        "title": "快速部署",
+        "description": "在几小时内将您的 AI SaaS 应用部署到生产环境，而不是几天。",
+        "icon": "RiCloudyFill"
+      }
+    ]
+  },
+  "coreFeature": {
+    "name": "coreFeature",
+    "title": "小糖 - AI 血糖助手",
+    "description": "AI食物扫描器，血糖扫描器 - 先进AI技术即时分析",
+    "camera": {
+      "title": "拍照识别",
+      "description": "使用相机拍摄食物或血糖仪，AI自动识别分析",
+      "placeholder": "选择图片进行分析",
+      "button_text": "开始分析"
+    },
+    "quick_actions": [
+      {
+        "title": "拍照识别",
+        "description": "拍照进行即时分析",
+        "type": "camera",
+        "action": "camera"
+      },
+      {
+        "title": "上传图片",
+        "description": "从相册上传图片",
+        "type": "upload",
+        "action": "upload"
+      }
+    ],
+    "analysis": {
+      "title": "AI分析",
+      "uploading_text": "上传中...",
+      "analyzing_text": "AI分析中...",
+      "completed_text": "分析完成",
+      "error_text": "分析失败",
+      "loading_text": "正在分析您的图片...",
+      "success_text": "分析成功完成",
+      "file_type_error": "请选择图片文件"
+    },
+    "results": {
+      "title": "分析结果",
+      "empty_text": "暂无分析结果",
+      "food_recognition_title": "食物识别结果",
+      "blood_sugar_title": "血糖检测结果",
+      "food_name": "食物名称",
+      "calories": "热量",
+      "carbs": "碳水化合物",
+      "protein": "蛋白质",
+      "fat": "脂肪",
+      "fiber": "纤维",
+      "sugar": "糖分",
+      "blood_sugar_value": "血糖值",
+      "confidence": "置信度",
+      "status_normal": "正常",
+      "status_high": "偏高",
+      "status_low": "偏低",
+      "unit_mg_dl": "mg/dL",
+      "unit_g": "g",
+      "unit_kcal": "kcal",
+      "save_button_text": "保存记录"
+    },
+    "actions": {
+      "save_record": "保存记录",
+      "retry_analysis": "重新分析",
+      "start_over": "重新开始"
+    },
+    "history": {
+      "title": "最近记录",
+      "empty_text": "暂无记录",
+      "view_all_text": "查看全部记录",
+      "max_items": 10
+    },
+    "tips": {
+      "title": "使用提示",
+      "items": [
+        "确保光线充足，拍摄清晰的照片",
+        "将食物或血糖仪放在画面中央",
+        "避免遮挡重要信息",
+        "可以手动输入补充信息"
+      ]
+    }
+  },
+  "benefit": {
+    "name": "benefit",
+    "title": "为什么选择 SugarSnap？",
+    "label": "优势",
+    "description": "SugarSnap 提供了糖尿病管理所需的一切功能，让您专注于健康生活而不是繁琐记录。",
+    "items": [
+      {
+        "title": "拍照识别",
+        "description": "只需拍摄食物照片，AI 即可自动识别并计算碳水化合物含量。",
+        "icon": "RiNextjsFill",
+        "image": {
+          "src": "/imgs/features/2.png"
+        }
+      },
+      {
+        "title": "血糖追踪",
+        "description": "拍摄血糖仪照片，自动记录血糖数值，轻松建立血糖日志。",
+        "icon": "RiClapperboardAiLine",
+        "image": {
+          "src": "/imgs/features/3.png"
+        }
+      },
+      {
+        "title": "智能分析",
+        "description": "基于 AI 技术提供个性化的饮食建议和血糖趋势分析。",
+        "icon": "RiCodeFill",
+        "image": {
+          "src": "/imgs/features/4.png"
+        }
+      }
+    ]
+  },
+  "usage": {
+    "name": "usage",
+    "title": "只需四个简单步骤，开启您的AI糖尿病管理之旅",
+    "description": "我们将aidiabetes.net的使用流程设计得极其简化，确保您可以在一分钟内开始使用，并立即享受AI糖尿病管理的便利。",
+    "image": {
+      "src": "/imgs/features/1.png",
+      "alt": "用户使用aidiabetes.net应用在手机上拍照"
+    },
+    "image_position": "left",
+    "text_align": "left",
+    "items": [
+      {
+        "title": "第一步：拍摄照片",
+        "description": "打开应用，将镜头对准您的餐食和血糖仪（插入血糖试纸并显示结果），然后点击快门。一张照片即可捕获两个关键信息。",
+        "image": {
+          "src": "/imgs/features/5.png",
+          "alt": "智能手机摄像头对准一盘食物和血糖仪的特写镜头"
+        }
+      },
+      {
+        "title": "第二步：AI自动分析",
+        "description": "我们的AI糖尿病系统立即开始工作。它识别照片中的食物，估算其营养价值，并使用OCR技术准确读取血糖数值。整个过程完全自动化，无需您的任何干预。",
+        "image": {
+          "src": "/imgs/features/6.png",
+          "alt": "显示AI分析图像、识别食物和数字的动画"
+        }
+      },
+      {
+        "title": "第三步：查看洞察和图表",
+        "description": "几秒钟后，您将看到一个清晰的日志条目，包含食物图像、营养信息和血糖读数。数据会自动同步到您的糖尿病图表中，供您随时查看和分析趋势。",
+        "image": {
+          "src": "/imgs/features/7.png",
+          "alt": "应用界面显示分析的日志条目和更新的图表"
+        }
+      },
+      {
+        "title": "第四步：AI医疗洞察与建议",
+        "description": "我们的AI分析您的历史数据趋势，提供个性化的医疗洞察和健康建议。这些AI生成的建议旨在协助您的医疗保健提供者制定更好、更明智的个性化治疗方案。",
+        "image": {
+          "src": "/imgs/features/8.png",
+          "alt": "应用界面显示AI生成的医疗洞察和建议"
+        }
+      }
+    ]
+  },
+  "feature": {
+    "name": "feature",
+    "title": "SugarSnap 核心功能",
+    "description": "糖尿病管理所需的所有智能功能和工具。",
+    "items": [
+      {
+        "title": "AI 食物识别",
+        "description": "先进的 AI 技术，准确识别食物种类并计算碳水化合物含量。",
+        "icon": "RiNextjsFill"
+      },
+      {
+        "title": "血糖监测",
+        "description": "拍照识别血糖仪读数，自动记录并生成血糖趋势图表。",
+        "icon": "RiKey2Fill"
+      },
+      {
+        "title": "营养分析",
+        "description": "详细的营养成分分析，包括卡路里、蛋白质、脂肪等。",
+        "icon": "RiDatabase2Line"
+      },
+      {
+        "title": "健康报告",
+        "description": "生成个性化的健康报告和饮食建议，帮助更好管理糖尿病。",
+        "icon": "RiCloudy2Fill"
+      },
+      {
+        "title": "数据同步",
+        "description": "云端数据同步，多设备访问，数据安全备份。",
+        "icon": "RiBarChart2Line"
+      },
+      {
+        "title": "智能提醒",
+        "description": "个性化的用药提醒、测血糖提醒和饮食建议推送。",
+        "icon": "RiRobot2Line"
+      }
+    ]
+  },
+  "stats": {
+    "name": "stats",
+    "label": "统计",
+    "title": "数据统计",
+    "description": "SugarSnap 帮助糖尿病患者更好管理健康的真实数据。",
+    "icon": "FaRegHeart",
+    "items": [
+      {
+        "title": "10000+",
+        "label": "活跃用户",
+        "description": "信任我们的产品"
+      },
+      {
+        "title": "50万+",
+        "label": "食物识别次数",
+        "description": "准确识别"
+      },
+      {
+        "title": "95%",
+        "label": "识别准确率",
+        "description": "可靠精准"
+      }
+    ]
+  },
+  "testimonial": {
+    "name": "testimonial",
+    "label": "用户评价",
+    "title": "用户如何评价 SugarSnap",
+    "description": "听听使用 SugarSnap 管理糖尿病的患者和家属怎么说。",
+    "icon": "GoThumbsup",
+    "items": [
+      {
+        "title": "李女士",
+        "label": "1型糖尿病患者",
+        "description": "SugarSnap 彻底改变了我管理糖尿病的方式。只需拍照就能知道食物的碳水含量，太方便了！血糖控制得更好了。",
+        "image": {
+          "src": "/imgs/users/1.png"
+        }
+      },
+      {
+        "title": "王先生",
+        "label": "2型糖尿病患者",
+        "description": "作为忙碌的上班族，SugarSnap 让我轻松记录血糖和饮食。AI识别很准确，报告也很详细，医生都夸我记录得好。",
+        "image": {
+          "src": "/imgs/users/2.png"
+        }
+      },
+      {
+        "title": "陈妈妈",
+        "label": "患者家属",
+        "description": "我女儿用 SugarSnap 管理她的糖尿病，现在她更愿意主动监测血糖了。界面友好，功能实用，很适合年轻人。",
+        "image": {
+          "src": "/imgs/users/3.png"
+        }
+      },
+      {
+        "title": "张医生",
+        "label": "内分泌科医生",
+        "description": "我推荐患者使用 SugarSnap，它的数据记录很详细，有助于我更好地了解患者的血糖控制情况，调整治疗方案。",
+        "image": {
+          "src": "/imgs/users/4.png"
+        }
+      },
+      {
+        "title": "小明",
+        "label": "青少年糖尿病患者",
+        "description": "SugarSnap 让管理糖尿病变得不那么可怕了。界面很酷，朋友们都觉得很有趣，我现在更愿意坚持监测血糖。",
+        "image": {
+          "src": "/imgs/users/5.png"
+        }
+      },
+      {
+        "title": "赵阿姨",
+        "label": "退休教师",
+        "description": "虽然我不太懂科技，但 SugarSnap 真的很好用。拍个照就知道能不能吃，血糖也记录得清清楚楚。",
+        "image": {
+          "src": "/imgs/users/6.png"
+        }
+      }
+    ]
+  },
+  "faq": {
+    "name": "faq",
+    "label": "常见问题",
+    "title": "关于 SugarSnap 的常见问题",
+    "description": "还有其他问题？通过 Discord 或电子邮件联系我们。",
+    "items": [
+      {
+        "title": "SugarSnap 如何识别食物？",
+        "description": "SugarSnap 使用先进的 AI 图像识别技术，只需拍摄食物照片，即可自动识别食物种类并计算碳水化合物、卡路里等营养成分。"
+      },
+      {
+        "title": "识别准确率如何？",
+        "description": "我们的 AI 识别准确率达到 95% 以上，并且会根据用户反馈不断优化。对于复杂食物，您也可以手动调整营养数据。"
+      },
+      {
+        "title": "数据安全吗？",
+        "description": "我们非常重视用户隐私和数据安全。所有健康数据都经过加密存储，符合医疗数据保护标准，绝不会泄露给第三方。"
+      },
+      {
+        "title": "支持哪些设备？",
+        "description": "SugarSnap 支持 iOS 和 Android 手机，也提供网页版。数据在所有设备间实时同步，随时随地管理您的健康。"
+      },
+      {
+        "title": "费用如何？",
+        "description": "我们提供免费试用版本，包含基础功能。高级功能如详细报告、无限识别次数等需要订阅会员，价格非常实惠。"
+      },
+      {
+        "title": "可以导出数据给医生看吗？",
+        "description": "当然可以！SugarSnap 支持导出详细的健康报告，包括血糖趋势、饮食记录等，方便您在就诊时与医生分享，获得更好的治疗建议。"
+      }
+    ]
+  },
+  "cta": {
+    "name": "cta",
+    "title": "准备好开始了吗？",
+    "description": "加入数万名糖尿病患者，使用 SugarSnap 轻松管理您的健康生活。",
+    "buttons": [
+      {
+        "title": "免费试用",
+        "url": "https://aidiabetes.net",
+        "target": "_blank",
+        "icon": "GoArrowUpRight"
+      },
+      {
+        "title": "阅读文档",
+        "url": "/#help",
+        "target": "_blank",
+        "variant": "outline"
+      }
+    ]
+  },
+  "footer": {
+    "name": "footer",
+    "brand": {
+      "title": "Sugar Snap",
+      "description": "SugarSnap 是糖尿病患者管理健康的最佳选择。",
+      "logo": {
+        "src": "/logo.png",
+        "alt": "Sugar Snap"
+      },
+      "url": "/"
+    },
+    "copyright": "© 2025 • Sugar Snap 保留所有权利。",
+    "nav": {
+      "items": [
+        {
+          "title": "关于",
+          "children": [
+            {
+              "title": "功能特点",
+              "url": "/#feature",
+              "target": "_self"
+            },
+            {
+              "title": "案例展示",
+              "url": "/#showcase",
+              "target": "_self"
+            }
+          ]
+        }
+      ]
+    },
+    "social": {
+      "items": [
+        {
+          "title": "X",
+          "icon": "RiTwitterXFill",
+          "url": "https://x.com/sugarsnap",
+          "target": "_blank"
+        },
+        {
+          "title": "Github",
+          "icon": "RiGithubFill",
+          "url": "https://github.com/sugarsnap",
+          "target": "_blank"
+        },
+        {
+          "title": "Discord",
+          "icon": "RiDiscordFill",
+          "url": "https://discord.gg/HQNnrzjZQS",
+          "target": "_blank"
+        },
+        {
+          "title": "邮箱",
+          "icon": "RiMailLine",
+          "url": "mailto:0992sunshine@gmail.com",
+          "target": "_self"
+        }
+      ]
+    },
+    "agreement": {
+      "items": [
+        {
+          "title": "隐私政策",
+          "url": "/privacy-policy"
+        },
+        {
+          "title": "服务条款",
+          "url": "/terms-of-service"
+        }
+      ]
+    }
+  }
+}
