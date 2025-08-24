@@ -83,21 +83,10 @@ export default function CoreFeatureBlock({ data }: CoreFeatureProps) {
       
       result = await response.json();
       
-      // 添加详细的调试日志
-      console.log('🔍 Dify API 完整返回结果:', result);
-      console.log('🔍 result.success:', result?.success);
-      console.log('🔍 result.data:', result?.data);
-      console.log('🔍 result.data.type:', result?.data?.type);
-      console.log('🔍 result.data.content:', result?.data?.content);
+
       
       // 验证返回结果格式
       if (!result || !result.success || !result.data || !result.data.type) {
-        console.error('❌ API 返回数据格式验证失败:', {
-          hasResult: !!result,
-          hasSuccess: !!result?.success,
-          hasData: !!result?.data,
-          hasType: !!result?.data?.type
-        });
         throw new Error('API 返回数据格式异常');
       }
       
@@ -113,19 +102,13 @@ export default function CoreFeatureBlock({ data }: CoreFeatureProps) {
       };
       
       // 根据 Dify API 返回的结果类型处理数据
-      console.log('🔍 开始处理结果类型:', result.data.type);
-      
       if (result.data.type === 'food') {
-        console.log('✅ 识别为食物类型，开始处理食物数据');
         // 食物识别结果
         const foodItems = result.data.content;
-        console.log('🔍 食物项目数组:', foodItems);
-        console.log('🔍 食物项目数量:', foodItems?.length);
         
         if (foodItems && foodItems.length > 0) {
           // 取第一个食物作为主要结果
           const mainFood = foodItems[0];
-          console.log('🔍 主要食物信息:', mainFood);
           
           mockResult.food = {
             name: mainFood.name,
@@ -138,10 +121,6 @@ export default function CoreFeatureBlock({ data }: CoreFeatureProps) {
             explanation: mainFood.explanation,
             allFoods: foodItems // 保存所有食物信息
           };
-          
-          console.log('✅ 食物结果已设置:', mockResult.food);
-        } else {
-          console.warn('⚠️ 食物数组为空或不存在');
         }
       } else if (result.data.type === 'test') {
         // 血糖检测结果
@@ -162,13 +141,16 @@ export default function CoreFeatureBlock({ data }: CoreFeatureProps) {
         return;
       }
 
-      console.log('🔍 最终结果对象:', mockResult);
-      console.log('🔍 是否包含食物信息:', !!mockResult.food);
-      
-      setCurrentResult(mockResult);
-      setAnalysisStatus("completed");
-      
-      console.log('✅ 状态已设置为 completed，结果已保存');
+      // 确保有有效的结果数据才设置为完成状态
+      if (mockResult.food || mockResult.bloodSugar) {
+        // 先设置结果，再设置状态
+        setCurrentResult(mockResult);
+        setAnalysisStatus("completed");
+      } else {
+        setErrorMessage('未能识别出有效内容，请重试');
+        setAnalysisStatus("error");
+        return;
+      }
       
     } catch (error: any) {
       console.error('分析失败:', error);
@@ -295,6 +277,8 @@ export default function CoreFeatureBlock({ data }: CoreFeatureProps) {
                   )}
                 </div>
               )}
+
+
 
               {/* 分析完成状态 */}
               {analysisStatus === "completed" && currentResult && (

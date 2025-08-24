@@ -84,7 +84,7 @@ async function callDifyWorkflow(uploadFileId: string): Promise<AnalysisResult> {
     user: 'diabetes-app-user'
   };
 
-  console.log('Dify API 请求体:', JSON.stringify(requestBody, null, 2));
+
 
   const response = await fetch('https://api.dify.ai/v1/workflows/run', {
     method: 'POST',
@@ -95,40 +95,55 @@ async function callDifyWorkflow(uploadFileId: string): Promise<AnalysisResult> {
     body: JSON.stringify(requestBody),
   });
 
-  console.log('Dify API 响应状态:', response.status, response.statusText);
+
 
   if (!response.ok) {
     const errorText = await response.text();
-    console.error('Dify API 错误响应:', errorText);
     throw new Error(`Dify API 调用失败: ${response.status} ${response.statusText} - ${errorText}`);
   }
 
   const result = await response.json();
-  console.log('Dify API 响应数据:', JSON.stringify(result, null, 2));
   
   // 从 Dify 响应中提取分析结果
   if (result.data && result.data.outputs) {
-    // 假设 Dify 返回的结果在 outputs 中
     const outputs = result.data.outputs;
     
-    // 根据返回的数据结构解析结果
-    if (outputs.type === 'test') {
-      return {
-        type: 'test',
-        content: outputs.content
-      };
-    } else if (outputs.type === 'food') {
-      return {
-        type: 'food',
-        content: outputs.content
-      };
-    } else {
-      return {
-        type: 'noallow',
-        content: {
-          message: '无法识别的图片内容'
+    // Dify 返回的数据在 text 字段中，需要解析 JSON 字符串
+    if (outputs.text) {
+      try {
+        const parsedResult = JSON.parse(outputs.text);
+        
+        // 根据解析后的数据结构返回结果
+        if (parsedResult.type === 'test') {
+          return {
+            type: 'test',
+            content: parsedResult.content
+          };
+        } else if (parsedResult.type === 'food') {
+          return {
+            type: 'food',
+            content: parsedResult.content
+          };
+        } else if (parsedResult.type === 'noallow') {
+          return {
+            type: 'noallow',
+            content: {
+              message: parsedResult.content?.message || '无法识别的图片内容'
+            }
+          };
+        } else {
+          return {
+            type: 'noallow',
+            content: {
+              message: '无法识别的图片内容'
+            }
+          };
         }
-      };
+      } catch (parseError) {
+        throw new Error('Dify API 返回的数据格式无法解析');
+      }
+    } else {
+      throw new Error('Dify API 返回格式异常：缺少 text 字段');
     }
   }
   
@@ -193,7 +208,6 @@ export async function POST(request: NextRequest) {
     });
     
   } catch (error) {
-    console.error('Dify API 调用错误:', error);
     
     // 根据错误类型返回不同的错误信息
     if (error instanceof Error) {
