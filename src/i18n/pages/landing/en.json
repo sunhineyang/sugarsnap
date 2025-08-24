@@ -423,12 +423,6 @@
         "url": "https://shipany.ai",
         "target": "_blank",
         "icon": "GoArrowUpRight"
-      },
-      {
-        "title": "View Documentation",
-        "url": "https://docs.shipany.ai",
-        "target": "_blank",
-        "variant": "outline"
       }
     ]
   },
@@ -450,23 +444,13 @@
           "title": "AI Tools",
           "children": [
             {
-              "title": "AI Food Scanner",
-              "url": "/#introduce",
+              "title": "Features",
+              "url": "/#feature",
               "target": "_self"
             },
             {
-              "title": "Blood Sugar Log",
-              "url": "/#introduce",
-              "target": "_self"
-            },
-            {
-              "title": "Diabetes Chart",
-              "url": "/#introduce",
-              "target": "_self"
-            },
-            {
-              "title": "Pricing",
-              "url": "/pricing",
+              "title": "Showcase",
+              "url": "/#showcase",
               "target": "_self"
             }
           ]
@@ -516,22 +500,10 @@
     "social": {
       "items": [
         {
-          "title": "Twitter / X",
-          "icon": "RiTwitterXFill",
-          "url": "https://x.com/shipanyai",
-          "target": "_blank"
-        },
-        {
-          "title": "Discord",
-          "icon": "RiDiscordFill",
-          "url": "https://discord.gg/HQNnrzjZQS",
-          "target": "_blank"
-        },
-        {
-          "title": "Github",
-          "icon": "RiGithubFill",
-          "url": "https://github.com/shipany",
-          "target": "_blank"
+          "title": "Email",
+          "icon": "RiMailLine",
+          "url": "mailto:0992sunshine@gmail.com",
+          "target": "_self"
         }
       ]
     },

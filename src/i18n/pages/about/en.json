@@ -1,0 +1,233 @@
+{
+  "template": "shipany-template-one",
+  "theme": "light",
+  "header": {
+    "brand": {
+      "title": "Sugar Snap",
+      "logo": {
+        "src": "/logo.png",
+        "alt": "AI Diabetes Logo - Simplifying diabetes management"
+      },
+      "url": "/"
+    },
+    "nav": {
+      "items": [
+        {
+          "title": "Home",
+          "url": "/",
+          "icon": "RiHomeLine"
+        },
+        {
+          "title": "Contact Us",
+          "url": "/contact",
+          "icon": "RiMailLine"
+        }
+      ]
+    },
+    "buttons": [
+      {
+        "title": "Get Started",
+        "url": "/#pricing",
+        "target": "_self",
+        "variant": "default",
+        "icon": "RiArrowRightUpLine"
+      }
+    ],
+    "show_sign": true,
+    "show_theme": true,
+    "show_locale": true
+  },
+  "hero": {
+    "title": "About Sugar Snap",
+    "highlight_text": "Sugar Snap",
+    "description": "We're on a mission to revolutionize diabetes management through cutting-edge AI technology. Our platform makes it effortless for people with diabetes to track their food intake and blood sugar levels, empowering them to live healthier, more confident lives.",
+    "announcement": {
+      "label": "Mission",
+      "title": "Simplifying Diabetes Care with AI",
+      "url": "#mission"
+    },
+    "tip": "Transforming diabetes management, one scan at a time",
+    "buttons": [
+      {
+        "title": "Try Our AI Scanner",
+        "icon": "RiCameraLensFill",
+        "url": "/#coreFeature",
+        "target": "_self",
+        "variant": "default"
+      },
+      {
+        "title": "Contact Our Team",
+        "icon": "RiTeamFill",
+        "url": "/contact",
+        "target": "_self",
+        "variant": "outline"
+      }
+    ],
+    "show_happy_users": false,
+    "show_badge": false
+  },
+  "mission": {
+    "name": "mission",
+    "title": "Our Mission: Making Diabetes Management Effortless",
+    "label": "Why We Exist",
+    "description": "Living with diabetes shouldn't mean spending hours each day logging food and tracking blood sugar. We believe that advanced AI technology can eliminate the tedious aspects of diabetes care, allowing people to focus on living their best lives. Our platform transforms complex health management into simple, intuitive actions—just snap a photo, and let our AI handle the rest.",
+    "image": {
+      "src": "/imgs/features/1.png",
+      "alt": "AI Diabetes mission - simplifying health management"
+    },
+    "items": [
+      {
+        "title": "Accessibility First",
+        "description": "We design our AI tools to be accessible to everyone, regardless of technical expertise or age. Diabetes management should be simple for all.",
+        "icon": "RiAccessibilityLine"
+      },
+      {
+        "title": "Privacy & Security",
+        "description": "Your health data is sacred. We implement the highest security standards and never compromise on privacy protection.",
+        "icon": "RiShieldCheckFill"
+      },
+      {
+        "title": "Continuous Innovation",
+        "description": "Our AI continuously learns and improves, ensuring you always have access to the most accurate and helpful diabetes management tools.",
+        "icon": "RiRocketFill"
+      }
+    ]
+  },
+  "story": {
+    "title": "Our Story",
+    "label": "The Beginning",
+    "description": "Sugar Snap was born from a simple observation: diabetes management tools were stuck in the past. While AI was revolutionizing every other aspect of healthcare, people with diabetes were still manually logging every meal and blood sugar reading. We knew there had to be a better way.",
+    "timeline": [
+      {
+        "year": "2024",
+        "title": "The Vision",
+        "description": "Recognizing the gap in AI-powered diabetes management, our team began developing advanced computer vision algorithms specifically for food recognition and blood glucose meter reading."
+      },
+      {
+        "year": "2024",
+        "title": "AI Development",
+        "description": "After months of training our AI models on thousands of food images and glucose meter displays, we achieved industry-leading accuracy rates in both food identification and OCR technology."
+      },
+      {
+        "year": "2025",
+        "title": "Platform Launch",
+        "description": "Sugar Snap officially launched, bringing together cutting-edge AI technology with an intuitive user experience designed specifically for diabetes management."
+      }
+    ]
+  },
+  "team": {
+    "title": "Meet Our Team",
+    "label": "The People Behind Sugar Snap",
+    "description": "We're a passionate team of technologists, healthcare professionals, and diabetes advocates working together to transform how people manage their health.",
+    "members": [
+      {
+        "name": "Development Team",
+        "role": "AI & Software Engineering",
+        "description": "Our engineering team combines expertise in machine learning, computer vision, and healthcare technology to build reliable, accurate AI tools.",
+        "image": {
+          "src": "/imgs/team/dev-team.jpg",
+          "alt": "Sugar Snap development team"
+        },
+        "specialties": ["AI/ML", "Computer Vision", "Healthcare Tech", "Mobile Development"]
+      },
+      {
+        "name": "Healthcare Advisors",
+        "role": "Medical & Nutrition Experts",
+        "description": "Our medical advisory board includes endocrinologists, certified diabetes educators, and nutritionists who ensure our platform meets real-world healthcare needs.",
+        "image": {
+          "src": "/imgs/team/medical-team.jpg",
+          "alt": "Sugar Snap medical advisory team"
+        },
+        "specialties": ["Endocrinology", "Diabetes Education", "Clinical Nutrition", "Patient Care"]
+      },
+      {
+        "name": "User Experience Team",
+        "role": "Design & Research",
+        "description": "Our UX team conducts extensive research with diabetes patients to ensure our platform is intuitive, accessible, and truly helpful in daily life.",
+        "image": {
+          "src": "/imgs/team/ux-team.jpg",
+          "alt": "Sugar Snap user experience team"
+        },
+        "specialties": ["User Research", "Accessibility Design", "Healthcare UX", "Patient Advocacy"]
+      }
+    ]
+  },
+  "values": {
+    "title": "Our Core Values",
+    "label": "What Drives Us",
+    "description": "These principles guide every decision we make and every feature we build.",
+    "items": [
+      {
+        "title": "Patient-Centered Design",
+        "description": "Every feature is designed with real diabetes patients in mind. We prioritize user needs over technical complexity.",
+        "icon": "RiHeartFill"
+      },
+      {
+        "title": "Scientific Accuracy",
+        "description": "Our AI models are trained on validated nutritional databases and medical standards to ensure reliable, accurate results.",
+        "icon": "RiMicroscopeLine"
+      },
+      {
+        "title": "Transparency",
+        "description": "We're open about how our AI works, its limitations, and how we protect your data. No black boxes, no hidden agendas.",
+        "icon": "RiEyeLine"
+      },
+      {
+        "title": "Continuous Learning",
+        "description": "We listen to user feedback, collaborate with healthcare professionals, and continuously improve our platform based on real-world usage.",
+        "icon": "RiBookOpenLine"
+      }
+    ]
+  },
+  "technology": {
+    "title": "Our Technology",
+    "label": "Powered by Advanced AI",
+    "description": "Behind Sugar Snap's simple interface lies sophisticated AI technology that makes accurate food recognition and blood sugar tracking possible.",
+    "features": [
+      {
+        "title": "Computer Vision AI",
+        "description": "Our proprietary computer vision models can identify over 10,000 different foods and accurately estimate nutritional content from a single photo.",
+        "icon": "RiEyeFill",
+        "stats": "95%+ accuracy"
+      },
+      {
+        "title": "OCR Technology",
+        "description": "Advanced Optical Character Recognition specifically trained on glucose meter displays for accurate blood sugar reading extraction.",
+        "icon": "RiScanLine",
+        "stats": "99%+ accuracy"
+      },
+      {
+        "title": "Machine Learning",
+        "description": "Our AI continuously learns from user interactions and corrections, becoming more accurate and personalized over time.",
+        "icon": "RiBrainLine",
+        "stats": "Always improving"
+      },
+      {
+        "title": "Data Security",
+        "description": "Enterprise-grade encryption and HIPAA-compliant infrastructure ensure your health data is always protected and private.",
+        "icon": "RiShieldCheckLine",
+        "stats": "Bank-level security"
+      }
+    ]
+  },
+  "cta": {
+    "title": "Join the Future of Diabetes Management",
+    "description": "Experience how AI can transform your daily diabetes care routine. Start your journey with Sugar Snap today.",
+    "buttons": [
+      {
+        "title": "Start for Free",
+        "url": "/#pricing",
+        "target": "_self",
+        "variant": "default",
+        "icon": "RiFlashlightFill"
+      },
+      {
+        "title": "Contact Our Team",
+        "url": "/contact",
+        "target": "_self",
+        "variant": "outline",
+        "icon": "RiTeamFill"
+      }
+    ]
+  }
+}

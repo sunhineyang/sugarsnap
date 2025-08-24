@@ -299,27 +299,51 @@ export default function CoreFeatureBlock({ data }: CoreFeatureProps) {
                         />
                       )}
                       
-                      {currentResult.food && (
+                      {currentResult.food && currentResult.food.allFoods && (
                         <div className="text-left">
-                          <div className="flex items-center gap-2 mb-4">
+                          <div className="flex items-center gap-2 mb-6">
                             <h4 className="font-semibold text-lg">{data.results?.food_recognition_title || "食物识别结果"}</h4>
                             <Badge variant="secondary">
-                              {((currentResult.food.confidence || 0) * 100).toFixed(1)}% {data.results?.confidence || "置信度"}
+                              识别到 {currentResult.food.allFoods.length} 种食物
                             </Badge>
                           </div>
-                          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                            <div className="text-center p-3 bg-muted rounded-lg">
-                              <div className="text-sm text-muted-foreground">{data.results?.food_name || "食物名称"}</div>
-                              <div className="font-semibold">{currentResult.food.name}</div>
-                            </div>
-                            <div className="text-center p-3 bg-muted rounded-lg">
-                              <div className="text-sm text-muted-foreground">{data.results?.calories || "热量"}</div>
-                              <div className="font-semibold">{currentResult.food.calories} {data.results?.unit_kcal || "卡"}</div>
-                            </div>
-                            <div className="text-center p-3 bg-muted rounded-lg">
-                              <div className="text-sm text-muted-foreground">{data.results?.carbs || "碳水化合物"}</div>
-                              <div className="font-semibold">{currentResult.food.carbs}{data.results?.unit_g || "g"}</div>
-                            </div>
+                          
+                          {/* 食物详细列表 */}
+                          <div className="space-y-4">
+                            {currentResult.food.allFoods.map((food: any, index: number) => {
+                              // 根据推荐等级设置颜色
+                              const getRecommendationColor = (recommendation: string) => {
+                                switch (recommendation) {
+                                  case '绿灯': return 'text-green-600 bg-green-50 border-green-200';
+                                  case '黄灯': return 'text-yellow-600 bg-yellow-50 border-yellow-200';
+                                  case '红灯': return 'text-red-600 bg-red-50 border-red-200';
+                                  default: return 'text-gray-600 bg-gray-50 border-gray-200';
+                                }
+                              };
+                              
+                              const getRecommendationIcon = (recommendation: string) => {
+                                switch (recommendation) {
+                                  case '绿灯': return '🟢';
+                                  case '黄灯': return '🟡';
+                                  case '红灯': return '🔴';
+                                  default: return '⚪';
+                                }
+                              };
+                              
+                              return (
+                                <div key={index} className="border rounded-lg p-4 bg-white">
+                                  <div className="flex items-start justify-between mb-3">
+                                    <h5 className="font-semibold text-lg">{food.name}</h5>
+                                    <div className={`px-3 py-1 rounded-full text-sm font-medium border ${getRecommendationColor(food.recommendation)}`}>
+                                      {getRecommendationIcon(food.recommendation)} {food.recommendation}
+                                    </div>
+                                  </div>
+                                  <p className="text-muted-foreground text-sm leading-relaxed">
+                                    {food.explanation}
+                                  </p>
+                                </div>
+                              );
+                            })}
                           </div>
                         </div>
                       )}

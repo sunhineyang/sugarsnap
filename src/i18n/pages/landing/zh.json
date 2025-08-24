@@ -442,12 +442,6 @@
         "url": "https://aidiabetes.net",
         "target": "_blank",
         "icon": "GoArrowUpRight"
-      },
-      {
-        "title": "阅读文档",
-        "url": "/#help",
-        "target": "_blank",
-        "variant": "outline"
       }
     ]
   },
@@ -484,24 +478,6 @@
     },
     "social": {
       "items": [
-        {
-          "title": "X",
-          "icon": "RiTwitterXFill",
-          "url": "https://x.com/sugarsnap",
-          "target": "_blank"
-        },
-        {
-          "title": "Github",
-          "icon": "RiGithubFill",
-          "url": "https://github.com/sugarsnap",
-          "target": "_blank"
-        },
-        {
-          "title": "Discord",
-          "icon": "RiDiscordFill",
-          "url": "https://discord.gg/HQNnrzjZQS",
-          "target": "_blank"
-        },
         {
           "title": "邮箱",
           "icon": "RiMailLine",

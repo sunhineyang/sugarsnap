@@ -1,0 +1,173 @@
+{
+  "template": "shipany-template-one",
+  "theme": "light",
+  "header": {
+    "brand": {
+      "title": "Sugar Snap",
+      "logo": {
+        "src": "/logo.png",
+        "alt": "AI Diabetes Logo - Simplifying diabetes management"
+      },
+      "url": "/"
+    },
+    "nav": {
+      "items": [
+        {
+          "title": "Home",
+          "url": "/",
+          "icon": "RiHomeLine"
+        },
+        {
+          "title": "About Us",
+          "url": "/about",
+          "icon": "RiInformationLine"
+        }
+      ]
+    },
+    "buttons": [
+      {
+        "title": "Get Started",
+        "url": "/#pricing",
+        "target": "_self",
+        "variant": "default",
+        "icon": "RiArrowRightUpLine"
+      }
+    ],
+    "show_sign": true,
+    "show_theme": true,
+    "show_locale": true
+  },
+  "hero": {
+    "title": "Contact Us",
+    "highlight_text": "Contact Us",
+    "description": "We're here to help you on your diabetes management journey. Whether you have questions about our AI technology, need technical support, or want to share feedback, our team is ready to assist you.",
+    "announcement": {
+      "label": "Support",
+      "title": "24/7 Customer Support Available",
+      "url": "mailto:0992sunshine@gmail.com"
+    },
+    "tip": "Get in touch with our diabetes care experts",
+    "buttons": [
+      {
+        "title": "Email Us Now",
+        "icon": "RiMailFill",
+        "url": "mailto:0992sunshine@gmail.com",
+        "target": "_blank",
+        "variant": "default"
+      },
+      {
+        "title": "View FAQ",
+        "icon": "RiQuestionLine",
+        "url": "/#faq",
+        "target": "_self",
+        "variant": "outline"
+      }
+    ],
+    "show_happy_users": false,
+    "show_badge": false
+  },
+  "contact_info": {
+    "title": "Get in Touch",
+    "label": "Contact Information",
+    "description": "Choose the best way to reach us. We're committed to providing you with the support you need for effective diabetes management.",
+    "items": [
+      {
+        "title": "Email Support",
+        "description": "Send us your questions, feedback, or technical issues. We typically respond within 24 hours.",
+        "icon": "RiMailFill",
+        "contact": "0992sunshine@gmail.com",
+        "action_text": "Send Email",
+        "action_url": "mailto:0992sunshine@gmail.com"
+      },
+      {
+        "title": "Technical Support",
+        "description": "Need help with the AI scanner or app functionality? Our technical team is here to assist.",
+        "icon": "RiCustomerService2Fill",
+        "contact": "Available via email",
+        "action_text": "Get Help",
+        "action_url": "mailto:0992sunshine@gmail.com?subject=Technical Support"
+      },
+      {
+        "title": "Partnership Inquiries",
+        "description": "Interested in partnering with us or integrating our AI diabetes technology?",
+        "icon": "RiHandshakeLine",
+        "contact": "Business partnerships",
+        "action_text": "Contact Us",
+        "action_url": "mailto:0992sunshine@gmail.com?subject=Partnership Inquiry"
+      }
+    ]
+  },
+  "contact_form": {
+    "title": "Send Us a Message",
+    "label": "Quick Contact",
+    "description": "Fill out the form below and we'll get back to you as soon as possible.",
+    "fields": {
+      "name": {
+        "label": "Full Name",
+        "placeholder": "Enter your full name",
+        "required": true
+      },
+      "email": {
+        "label": "Email Address",
+        "placeholder": "Enter your email address",
+        "required": true
+      },
+      "subject": {
+        "label": "Subject",
+        "placeholder": "What is this regarding?",
+        "required": true
+      },
+      "message": {
+        "label": "Message",
+        "placeholder": "Tell us how we can help you...",
+        "required": true
+      }
+    },
+    "submit_button": {
+      "text": "Send Message",
+      "icon": "RiSendPlaneFill"
+    },
+    "success_message": "Thank you for your message! We'll get back to you within 24 hours.",
+    "error_message": "Sorry, there was an error sending your message. Please try again or email us directly."
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "label": "Support",
+    "description": "Find quick answers to common questions about our AI diabetes management platform.",
+    "items": [
+      {
+        "question": "How accurate is the AI food recognition?",
+        "answer": "Our AI food scanner has over 95% accuracy in identifying common foods and estimating nutritional content. The system continuously learns and improves with each scan."
+      },
+      {
+        "question": "Is my health data secure and private?",
+        "answer": "Absolutely. We follow strict HIPAA compliance standards and use enterprise-grade encryption to protect your health data. Your information is never shared without your explicit consent."
+      },
+      {
+        "question": "Can I export my diabetes tracking data?",
+        "answer": "Yes, you can export your food logs, blood sugar readings, and trend charts in various formats (PDF, CSV) to share with your healthcare provider."
+      },
+      {
+        "question": "Do you offer integration with other health apps?",
+        "answer": "We're working on integrations with popular health platforms and glucose monitoring devices. Contact us to learn about current and upcoming integrations."
+      },
+      {
+        "question": "What if the AI doesn't recognize my food correctly?",
+        "answer": "You can easily correct any misidentified foods, and our AI learns from these corrections. You can also manually add foods that aren't in our database."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Ready to Start Your AI Diabetes Journey?",
+    "description": "Join thousands of users who are already managing their diabetes more effectively with our AI-powered platform.",
+    "buttons": [
+      {
+        "title": "Start for Free",
+        "url": "/#pricing",
+        "target": "_self",
+        "variant": "default",
+        "icon": "RiFlashlightFill"
+      }
+    ]
+  }
+}
