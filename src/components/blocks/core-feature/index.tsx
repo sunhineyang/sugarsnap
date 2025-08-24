@@ -17,6 +17,7 @@ export default function CoreFeatureBlock({ data }: CoreFeatureProps) {
   const [currentResult, setCurrentResult] = useState<AnalysisResult | null>(null);
   const [history, setHistory] = useState<AnalysisResult[]>([]);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [errorMessage, setErrorMessage] = useState<string>("");
   
   // 文件输入引用
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -82,8 +83,21 @@ export default function CoreFeatureBlock({ data }: CoreFeatureProps) {
       
       result = await response.json();
       
+      // 添加详细的调试日志
+      console.log('🔍 Dify API 完整返回结果:', result);
+      console.log('🔍 result.success:', result?.success);
+      console.log('🔍 result.data:', result?.data);
+      console.log('🔍 result.data.type:', result?.data?.type);
+      console.log('🔍 result.data.content:', result?.data?.content);
+      
       // 验证返回结果格式
       if (!result || !result.success || !result.data || !result.data.type) {
+        console.error('❌ API 返回数据格式验证失败:', {
+          hasResult: !!result,
+          hasSuccess: !!result?.success,
+          hasData: !!result?.data,
+          hasType: !!result?.data?.type
+        });
         throw new Error('API 返回数据格式异常');
       }
       
@@ -99,12 +113,20 @@ export default function CoreFeatureBlock({ data }: CoreFeatureProps) {
       };
       
       // 根据 Dify API 返回的结果类型处理数据
+      console.log('🔍 开始处理结果类型:', result.data.type);
+      
       if (result.data.type === 'food') {
+        console.log('✅ 识别为食物类型，开始处理食物数据');
         // 食物识别结果
         const foodItems = result.data.content;
+        console.log('🔍 食物项目数组:', foodItems);
+        console.log('🔍 食物项目数量:', foodItems?.length);
+        
         if (foodItems && foodItems.length > 0) {
           // 取第一个食物作为主要结果
           const mainFood = foodItems[0];
+          console.log('🔍 主要食物信息:', mainFood);
+          
           mockResult.food = {
             name: mainFood.name,
             calories: 100, // Dify 返回的数据中没有热量信息，使用默认值
@@ -116,6 +138,10 @@ export default function CoreFeatureBlock({ data }: CoreFeatureProps) {
             explanation: mainFood.explanation,
             allFoods: foodItems // 保存所有食物信息
           };
+          
+          console.log('✅ 食物结果已设置:', mockResult.food);
+        } else {
+          console.warn('⚠️ 食物数组为空或不存在');
         }
       } else if (result.data.type === 'test') {
         // 血糖检测结果
@@ -129,37 +155,44 @@ export default function CoreFeatureBlock({ data }: CoreFeatureProps) {
           recommendation: content.recommendation
         };
       } else if (result.data.type === 'noallow') {
-        // 其他类型结果，抛出错误
-        throw new Error(result.data.content.message || '无法识别的图片类型');
+        // 其他类型结果，设置错误状态
+        const errorMsg = result.data.content.message || '无法识别的图片内容';
+        setErrorMessage(errorMsg);
+        setAnalysisStatus("error");
+        return;
       }
 
+      console.log('🔍 最终结果对象:', mockResult);
+      console.log('🔍 是否包含食物信息:', !!mockResult.food);
+      
       setCurrentResult(mockResult);
       setAnalysisStatus("completed");
+      
+      console.log('✅ 状态已设置为 completed，结果已保存');
       
     } catch (error: any) {
       console.error('分析失败:', error);
       setAnalysisStatus("error");
       
       // 显示用户友好的错误信息
-      let errorMessage = '分析失败，请重试';
+      let errorMsg = '分析失败，请重试';
       if (error.message) {
         if (error.message.includes('超时') || error.name === 'AbortError') {
-          errorMessage = '网络超时，请检查网络连接后重试';
+          errorMsg = '网络超时，请检查网络连接后重试';
         } else if (error.message.includes('文件大小')) {
-          errorMessage = '文件过大，请选择小于 10MB 的图片';
+          errorMsg = '文件过大，请选择小于 10MB 的图片';
         } else if (error.message.includes('格式')) {
-          errorMessage = '图片格式不支持，请选择 JPG、PNG 等常见格式';
+          errorMsg = '图片格式不支持，请选择 JPG、PNG 等常见格式';
         } else if (error.message.includes('配置错误')) {
-          errorMessage = '服务暂时不可用，请稍后重试';
+          errorMsg = '服务暂时不可用，请稍后重试';
         } else {
-          errorMessage = error.message;
+          errorMsg = error.message;
         }
       } else if (error.name === 'AbortError') {
-        errorMessage = '请求超时，请检查网络连接后重试';
+        errorMsg = '请求超时，请检查网络连接后重试';
       }
       
-      // 可以在这里添加错误提示的 UI 显示
-      alert(errorMessage);
+      setErrorMessage(errorMsg);
     }
   };
 
@@ -178,6 +211,7 @@ export default function CoreFeatureBlock({ data }: CoreFeatureProps) {
     setCurrentResult(null);
     setSelectedImage(null);
     setAnalysisStatus("idle");
+    setErrorMessage("");
   };
 
   return (
@@ -351,10 +385,26 @@ export default function CoreFeatureBlock({ data }: CoreFeatureProps) {
                     <AlertCircle className="w-16 h-16 text-destructive" />
                   </div>
                   <h3 className="text-xl font-semibold mb-2">{data.analysis?.error_title || "分析失败"}</h3>
-                  <p className="text-muted-foreground mb-6">{data.analysis?.error_text || "请检查网络连接或重试"}</p>
-                  <Button onClick={resetAnalysis}>
-                    {data.actions?.start_over || "重新开始"}
-                  </Button>
+                  <p className="text-muted-foreground mb-6">
+                    {errorMessage || data.analysis?.error_text || "请检查网络连接或重试"}
+                  </p>
+                  {selectedImage && (
+                    <div className="mb-6">
+                      <img 
+                        src={selectedImage} 
+                        alt="分析失败的图片" 
+                        className="w-32 h-32 object-cover rounded-lg mx-auto border"
+                      />
+                    </div>
+                  )}
+                  <div className="flex gap-4 justify-center">
+                    <Button onClick={resetAnalysis}>
+                      {data.actions?.start_over || "重新开始"}
+                    </Button>
+                    <Button variant="outline" onClick={() => fileInputRef.current?.click()}>
+                      选择其他图片
+                    </Button>
+                  </div>
                 </div>
               )}
             </CardContent>
