@@ -138,7 +138,6 @@ export default function CoreFeatureBlock({ data }: CoreFeatureProps) {
           value: parseFloat(content.blood_glucose_level),
           unit: content.unit,
           level: parseFloat(content.blood_glucose_level) > 7.0 ? "high" : "normal",
-          confidence: 0.9, // 使用默认置信度
           interpretation: content.interpretation,
           recommendation: content.recommendation
         };
@@ -404,16 +403,41 @@ export default function CoreFeatureBlock({ data }: CoreFeatureProps) {
                                currentResult.bloodSugar.level === 'high' ? (data.results?.status_high || '偏高') : (data.results?.status_low || '偏低')}
                             </Badge>
                           </div>
-                          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                          <div className="grid grid-cols-1 gap-4 mb-4">
                             <div className="text-center p-3 bg-muted rounded-lg">
                               <div className="text-sm text-muted-foreground">{data.results?.blood_sugar_value || "血糖值"}</div>
                               <div className="font-semibold">{currentResult.bloodSugar.value} {currentResult.bloodSugar.unit}</div>
                             </div>
-                            <div className="text-center p-3 bg-muted rounded-lg">
-                              <div className="text-sm text-muted-foreground">{data.results?.confidence || "置信度"}</div>
-                              <div className="font-semibold">{((currentResult.bloodSugar.confidence || 0) * 100).toFixed(1)}%</div>
-                            </div>
                           </div>
+                          
+                          {/* 健康解读和推荐行动 */}
+                          {(currentResult.bloodSugar.interpretation || currentResult.bloodSugar.recommendation) && (
+                            <div className="space-y-4">
+                              {currentResult.bloodSugar.interpretation && (
+                                <div className="p-4 bg-blue-50 border border-blue-200 rounded-lg">
+                                  <div className="flex items-center gap-2 mb-2">
+                                    <div className="w-5 h-5 text-blue-600">📊</div>
+                                    <h5 className="font-semibold text-blue-800">{data.results?.health_interpretation || "健康解读"}</h5>
+                                  </div>
+                                  <p className="text-blue-700 text-sm leading-relaxed">
+                                    {currentResult.bloodSugar.interpretation}
+                                  </p>
+                                </div>
+                              )}
+                              
+                              {currentResult.bloodSugar.recommendation && (
+                                <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
+                                  <div className="flex items-center gap-2 mb-2">
+                                    <div className="w-5 h-5 text-green-600">💡</div>
+                                    <h5 className="font-semibold text-green-800">{data.results?.recommendation_action || "推荐行动"}</h5>
+                                  </div>
+                                  <p className="text-green-700 text-sm leading-relaxed">
+                                    {currentResult.bloodSugar.recommendation}
+                                  </p>
+                                </div>
+                              )}
+                            </div>
+                          )}
                         </div>
                       )}
                     </CardContent>

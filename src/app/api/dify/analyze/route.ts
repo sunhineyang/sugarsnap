@@ -154,71 +154,186 @@ async function callDifyWorkflow(uploadFileId: string, lang?: string): Promise<An
   // 添加调试信息来查看完整的返回结构
   console.log('🔍 [API DEBUG] Dify完整返回结果:', JSON.stringify(result, null, 2));
   
-  // 从 Dify 响应中提取分析结果
-  if (result.data && result.data.outputs) {
-    const outputs = result.data.outputs;
-    console.log('🔍 [API DEBUG] outputs结构:', JSON.stringify(outputs, null, 2));
-    
-    // 检查新的数据结构：直接从outputs中获取type和对应的数据
-    if (outputs.type) {
-      const resultType = outputs.type;
-      console.log('🔍 [API DEBUG] 识别到的type:', resultType);
-      
-      try {
-        // 根据type类型获取对应的数据
-        let contentData;
-        
-        if (resultType === 'food' && outputs.food) {
-          // food字段包含JSON字符串，需要解析
-          contentData = JSON.parse(outputs.food);
-          console.log('🔍 [API DEBUG] 解析后的food数据:', contentData);
-          
-          return {
-            type: 'food',
-            content: contentData.content || contentData
-          };
-        } else if (resultType === 'test' && outputs.test) {
-          // test字段包含JSON字符串，需要解析
-          contentData = JSON.parse(outputs.test);
-          console.log('🔍 [API DEBUG] 解析后的test数据:', contentData);
-          
-          return {
-            type: 'test',
-            content: contentData.content || contentData
-          };
-        } else if (resultType === 'other' && outputs.other) {
-          // other字段包含JSON字符串，需要解析
-          contentData = JSON.parse(outputs.other);
-          console.log('🔍 [API DEBUG] 解析后的other数据:', contentData);
-          
-          return {
-            type: 'noallow',
-            content: {
-              message: contentData.content?.message || contentData.message || '无法识别的图片内容'
-            }
-          };
-        } else {
-          // 如果type存在但对应的数据字段为null或不存在
-          console.log('🔍 [API DEBUG] type存在但对应数据字段为空:', resultType);
-          return {
-            type: 'noallow',
-            content: {
-              message: '无法识别的图片内容'
-            }
-          };
-        }
-      } catch (parseError) {
-        console.error('🚨 [API ERROR] 解析JSON数据失败:', parseError);
-        throw new Error('Dify API 返回的数据格式无法解析');
-      }
-    } else {
-      console.error('🚨 [API ERROR] outputs中缺少type字段');
-      throw new Error('Dify API 返回格式异常：缺少 type 字段');
-    }
+  // 检查返回数据结构
+  if (!result.data || !result.data.outputs) {
+    console.error('🚨 [API ERROR] 返回数据格式异常:', result);
+    throw new Error('Dify API 返回格式异常');
   }
   
-  console.error('🚨 [API ERROR] result.data或result.data.outputs不存在');
-  throw new Error('Dify API 返回格式异常');
+  const outputs = result.data.outputs;
+  console.log('🔍 [API DEBUG] outputs结构:', JSON.stringify(outputs, null, 2));
+  
+  // 检查数据结构：从outputs中获取type和对应的数据
+  if (outputs.type) {
+    const resultType = outputs.type;
+    console.log('🔍 [API DEBUG] 识别到的type:', resultType);
+    
+    try {
+      // 根据type类型获取对应的数据
+      let contentData;
+      
+      if (resultType === 'food' && outputs.food) {
+        // 检查food字段是否为字符串，如果是则解析，否则直接使用
+        if (typeof outputs.food === 'string') {
+          contentData = JSON.parse(outputs.food);
+        } else {
+          contentData = outputs.food;
+        }
+        console.log('🔍 [API DEBUG] food数据:', contentData);
+        
+        return {
+          type: 'food',
+          content: contentData.content || contentData
+        };
+      } else if (resultType === 'test' && outputs.test) {
+        // 根据用户提供的数据格式，outputs.test是对象，直接使用
+        contentData = outputs.test;
+        console.log('🔍 [API DEBUG] test数据:', contentData);
+        
+        // 血糖数据在test.content中
+        const testContent = contentData.content;
+        
+        return {
+          type: 'test',
+          content: {
+            blood_glucose_level: testContent.blood_glucose_level,
+            unit: testContent.unit,
+            interpretation: testContent.interpretation,
+            recommendation: testContent.recommendation
+          }
+        };
+      } else if (resultType === 'other' && outputs.other) {
+        // 检查other字段是否为字符串，如果是则解析，否则直接使用
+        if (typeof outputs.other === 'string') {
+          contentData = JSON.parse(outputs.other);
+        } else {
+          contentData = outputs.other;
+        }
+        console.log('🔍 [API DEBUG] other数据:', contentData);
+        
+        return {
+          type: 'noallow',
+          content: {
+            message: contentData.content?.message || contentData.message || '无法识别的图片内容'
+          }
+        };
+      } else {
+        // 如果type存在但对应的数据字段为null或不存在
+        console.log('🔍 [API DEBUG] type存在但对应数据字段为空:', resultType);
+        
+        // 特殊处理：当type为test但test字段为空时，尝试从other字段解析血糖数据
+        if (resultType === 'test' && outputs.other) {
+          try {
+            contentData = JSON.parse(outputs.other);
+            console.log('🔍 [API DEBUG] 从other字段解析到的数据:', contentData);
+            
+            // 检查是否包含血糖相关数据
+            if (contentData.content && contentData.content.blood_glucose_level) {
+              const testContent = contentData.content;
+              return {
+                type: 'test',
+                content: {
+                  blood_glucose_level: testContent.blood_glucose_level,
+                  unit: testContent.unit,
+                  interpretation: testContent.interpretation,
+                  recommendation: testContent.recommendation
+                }
+              };
+            }
+            
+            // 新增：从message中提取血糖读数
+            if (contentData.message) {
+              const message = contentData.message;
+              // 使用正则表达式匹配血糖读数，如 "10.2 mmol/L" 或 "180 mg/dL"
+              const glucoseMatch = message.match(/(\d+\.?\d*)\s*(mmol\/L|mg\/dL)/i);
+              
+              if (glucoseMatch) {
+                const value = parseFloat(glucoseMatch[1]);
+                const unit = glucoseMatch[2].toLowerCase();
+                
+                // 根据血糖值和单位提供解释（支持多语言）
+                let interpretation = '';
+                let recommendation = '';
+                
+                if (unit === 'mmol/l') {
+                  if (value < 4.0) {
+                    interpretation = lang === 'en' ? 'Low blood glucose' : '血糖偏低';
+                    recommendation = lang === 'en' 
+                      ? 'It is recommended to supplement sugar immediately. If symptoms persist, please consult a doctor.'
+                      : '建议立即补充糖分，如果症状持续请咨询医生';
+                  } else if (value <= 7.0) {
+                    interpretation = lang === 'en' ? 'Normal blood glucose' : '血糖正常';
+                    recommendation = lang === 'en'
+                      ? 'Continue to maintain good eating and exercise habits.'
+                      : '继续保持良好的饮食和运动习惯';
+                  } else if (value <= 11.0) {
+                    interpretation = lang === 'en' ? 'High blood glucose' : '血糖偏高';
+                    recommendation = lang === 'en'
+                      ? 'It is recommended to pay attention to dietary control, exercise moderately, and consult a doctor if necessary.'
+                      : '建议注意饮食控制，适量运动，必要时咨询医生';
+                  } else {
+                    interpretation = lang === 'en' ? 'Very high blood glucose' : '血糖过高';
+                    recommendation = lang === 'en'
+                      ? 'It is recommended to consult a doctor immediately and adjust the treatment plan.'
+                      : '建议立即咨询医生，调整治疗方案';
+                  }
+                } else if (unit === 'mg/dl') {
+                  if (value < 70) {
+                    interpretation = lang === 'en' ? 'Low blood glucose' : '血糖偏低';
+                    recommendation = lang === 'en'
+                      ? 'It is recommended to supplement sugar immediately. If symptoms persist, please consult a doctor.'
+                      : '建议立即补充糖分，如果症状持续请咨询医生';
+                  } else if (value <= 126) {
+                    interpretation = lang === 'en' ? 'Normal blood glucose' : '血糖正常';
+                    recommendation = lang === 'en'
+                      ? 'Continue to maintain good eating and exercise habits.'
+                      : '继续保持良好的饮食和运动习惯';
+                  } else if (value <= 200) {
+                    interpretation = lang === 'en' ? 'High blood glucose' : '血糖偏高';
+                    recommendation = lang === 'en'
+                      ? 'It is recommended to pay attention to dietary control, exercise moderately, and consult a doctor if necessary.'
+                      : '建议注意饮食控制，适量运动，必要时咨询医生';
+                  } else {
+                    interpretation = lang === 'en' ? 'Very high blood glucose' : '血糖过高';
+                    recommendation = lang === 'en'
+                      ? 'It is recommended to consult a doctor immediately and adjust the treatment plan.'
+                      : '建议立即咨询医生，调整治疗方案';
+                  }
+                }
+                
+                console.log('🔍 [API DEBUG] 从message提取到血糖数据:', { value, unit, interpretation });
+                
+                return {
+                  type: 'test',
+                  content: {
+                    blood_glucose_level: value.toString(),
+                    unit: unit,
+                    interpretation: interpretation,
+                    recommendation: recommendation
+                  }
+                };
+              }
+            }
+          } catch (parseError) {
+            console.error('🚨 [API ERROR] 从other字段解析血糖数据失败:', parseError);
+          }
+        }
+        
+        return {
+          type: 'noallow',
+          content: {
+            message: '无法识别的图片内容'
+          }
+        };
+      }
+    } catch (parseError) {
+      console.error('🚨 [API ERROR] 解析JSON数据失败:', parseError);
+      throw new Error('Dify API 返回的数据格式无法解析');
+    }
+  } else {
+    console.error('🚨 [API ERROR] outputs中缺少type字段');
+    throw new Error('Dify API 返回格式异常：缺少 type 字段');
+  }
 }
 
 export async function POST(request: Request) {
@@ -277,7 +392,7 @@ export async function POST(request: Request) {
     const result = await Promise.race([
       callDifyWorkflow(uploadFileId, lang),
       new Promise<never>((_, reject) => 
-        setTimeout(() => reject(new Error('请求超时')), 30000) // 30秒超时
+        setTimeout(() => reject(new Error('请求超时')), 60000) // 30秒超时
       )
     ]);
     

@@ -189,12 +189,15 @@
       "unit_g": "g",
       "unit_kcal": "kcal",
       "save_button_text": "保存记录",
-      "food_count_text": "识别到 {count} 种食物"
+      "food_count_text": "识别到 {count} 种食物",
+      "health_interpretation": "健康解读",
+      "recommendation_action": "推荐行动"
     },
     "actions": {
       "save_record": "保存记录",
       "retry_analysis": "重新分析",
-      "start_over": "重新开始"
+      "start_over": "重新开始",
+      "select_other_image": "选择其他图片"
     },
     "history": {
       "title": "最近记录",

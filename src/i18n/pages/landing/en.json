@@ -188,12 +188,15 @@
       "unit_g": "g",
       "unit_kcal": "kcal",
       "save_button_text": "Save Record",
-      "food_count_text": "Detected {count} food item(s)"
+      "food_count_text": "Detected {count} food item(s)",
+      "health_interpretation": "Health Interpretation",
+      "recommendation_action": "Recommended Actions"
     },
     "actions": {
       "save_record": "Save Record",
       "retry_analysis": "Retry Analysis",
-      "start_over": "Start Over"
+      "start_over": "Start Over",
+      "select_other_image": "Select Another Image"
     },
     "history": {
       "title": "Recent Records",
